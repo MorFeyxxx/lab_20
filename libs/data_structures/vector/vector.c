@@ -83,9 +83,9 @@ void popBack(vector *v){
     if (isEmpty(v)){
         printf(stderr, "Zero length");
         exit(1);
-    } else {
-        v->size--;
     }
+
+    v->size--;
 }
 
 int* atVector(vector *v, size_t index){
