@@ -1,8 +1,6 @@
 #include <stdio.h>
-#include <assert.h>
 #include <malloc.h>
 #include <stdlib.h>
-#include <memory.h>
 #include "../../algorithms/array/array.h"
 #include "../../data_structures/vector/vector.h"
 
@@ -76,8 +74,9 @@ void pushBack(vector *v, int x){
         reserve(v, new_capacity);
     }
 
-    v->data[v->size] = x;
     v->size++;
+    v->data[v->size - 1] = x;
+
 }
 
 void popBack(vector *v){
