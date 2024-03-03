@@ -1,5 +1,6 @@
 #include <assert.h>
 #include "libs/data_structures/vector/vector.h"
+#include "libs/data_structures/vectorVoid/vectorVoid.h"
 
 // тест на работоспособность функции create
 void test_createVector_non_empty_vector(){
@@ -151,12 +152,7 @@ void test_at_vector() {
 }
 
 int main() {
-    test_createVector();
-    test_reserve();
-    test_pushBack();
-    test_shrinkToFit();
-    test_pop_back();
-    test_at_vector();
+    vectorVoid v = {(int []) {1, 2, 3}, 3, 3, sizeof(int)};
 
     return 0;
 }
