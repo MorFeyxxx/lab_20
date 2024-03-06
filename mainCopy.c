@@ -1,67 +1,164 @@
 #include <stdio.h>
-#include <malloc.h>
+#include <assert.h>
+#include <math.h>
+#include "libs/data_structures/vector/vector.h"
 
-typedef struct unordered_array_set {
-    int* data;
-    size_t size;
-    size_t capacity;
-} unordered_array_set;
+// тест на работоспособность функции create
+void test_createVector_non_empty_vector(){
+    vector v = createVector(5);
 
-int compare(const void * a, const void * b) {
-    return ( *(int*)a - *(int*)b );
+    assert(v.data != NULL && v.size == 0 && v.capacity == 5);
+
+    deleteVector(&v);
 }
 
-unordered_array_set create_set(char* str, int n) {
-    unordered_array_set set;
-    set.size = n;
-    set.capacity = n;
-    set.data = (int*) malloc(n * sizeof(int));
-    for (int i = 0; i < n; i++) {
-        set.data[i] = str[i] - '0';
-    }
-    qsort(set.data, set.size, sizeof(int), compare);
-    return set;
+void test_createVector_empty_vector(){
+    vector v = createVector(0);
+
+    assert(v.size == 0 && v.capacity == 0);
+
+    deleteVector(&v);
+}
+
+void test_createVector(){
+    test_createVector_non_empty_vector();
+    test_createVector_empty_vector();
+}
+
+// тест на изменение размера вектора
+void test_reserve(){
+    vector v = createVector(5);
+
+    reserve(&v, 10);
+    assert(v.capacity == 10);
+
+    reserve(&v, 7);
+    assert(v.capacity == 7);
+
+    reserve(&v, 0);
+    assert(v.capacity == 0);
+
+    deleteVector(&v);
+}
+
+// тест на добавление в конец вектора элемент
+void test_pushBack_non_empty_vector() {
+    vector v = createVector(6);
+
+    pushBack(&v, 1);
+    pushBack(&v, 2);
+    pushBack(&v, 3);
+    pushBack(&v, 4);
+    pushBack(&v, 5);
+    assert(v.size == 5);
+
+    deleteVector(&v);
+}
+
+void test_pushBack_empty_vector() {
+    vector v = createVector(5);
+
+    pushBack(&v, 5);
+    assert(v.data[0] == 5 && v.size == 1);
+
+    deleteVector(&v);
+}
+
+void test_pushBack_zero_length() {
+    vector v = createVector(0);
+
+    pushBack(&v, 5);
+    assert(v.data[0] == 5 && v.size == 1 && v.capacity == 1);
+
+    deleteVector(&v);
+}
+
+void test_pushBack(){
+    test_pushBack_non_empty_vector();
+    test_pushBack_empty_vector();
+    test_pushBack_zero_length();
+}
+
+// тест на освобождение памяти, выделенную под неиспользуемые элементы
+void test_shrinkToFit(){
+    vector v = createVector(7);
+
+    for (int i = 1; i < 6; i++)
+        pushBack(&v, i);
+
+    shrinkToFit(&v);
+    assert(v.capacity == v.size);
+
+    deleteVector(&v);
+}
+
+// тест на удаление последнего элемента
+void test_pop_back() {
+    vector v = createVector(0);
+
+    pushBack(&v, 3);
+    assert(v.size == 1);
+
+    popBack(&v);
+    assert(v.size == 0 && v.capacity == 1);
+
+    deleteVector(&v);
+}
+
+// тест на получение адреса i-го элемента вектора
+void test_at_vector_non_empty_vector() {
+    vector v = createVector(5);
+
+    pushBack(&v, 6);
+    pushBack(&v, 4);
+    pushBack(&v, 8);
+
+    int* ptr = atVector(&v, 1);
+    assert(v.data[1] == *ptr);
+
+    deleteVector(&v);
+}
+void test_at_vector_request_to_last_element() {
+    vector v = createVector(4);
+
+    pushBack(&v, 1);
+    pushBack(&v, 3);
+    pushBack(&v, 8);
+    pushBack(&v, 6);
+
+    int* ptr = back(&v);
+    assert(v.data[3] == *ptr);
+
+    deleteVector(&v);
+}
+
+void test_at_vector_request_to_first_element() {
+    vector v = createVector(4);
+
+    pushBack(&v, 1);
+    pushBack(&v, 3);
+    pushBack(&v, 8);
+    pushBack(&v, 6);
+
+    int* ptr = front(&v);
+    assert(v.data[0] == *ptr);
+
+    deleteVector(&v);
+}
+
+void test_at_vector() {
+    test_at_vector_non_empty_vector();
+    test_at_vector_request_to_last_element();
+    test_at_vector_request_to_first_element();
 }
 
 int main() {
-    int n;
-    scanf("%d", &n);
-    char sherlock[n+1], moriarty[n+1];
-    scanf("%s", sherlock);
-    scanf("%s", moriarty);
-
-    unordered_array_set sherlock_set = create_set(sherlock, n);
-    unordered_array_set moriarty_set = create_set(moriarty, n);
-
-    int min_slaps = 0, max_slaps = 0;
-    int j = 0;
-    for (int i = 0; i < n; i++) {
-        while (j < n && moriarty_set.data[j] < sherlock_set.data[i]) {
-            j++;
-        }
-        if (j < n) {
-            j++;
-        } else {
-            min_slaps++;
-        }
-    }
-
-    j = 0;
-    for (int i = 0; i < n; i++) {
-        while (j < n && moriarty_set.data[j] <= sherlock_set.data[i]) {
-            j++;
-        }
-        if (j < n) {
-            max_slaps++;
-            j++;
-        }
-    }
-
-    printf("%d\n", min_slaps);
-    printf("%d\n", max_slaps);
-
-    free(sherlock_set.data);
-    free(moriarty_set.data);
+    test_createVector();
+    test_reserve();
+    test_pushBack();
+    test_shrinkToFit();
+    test_pop_back();
+    test_at_vector();
 
     return 0;
 }
