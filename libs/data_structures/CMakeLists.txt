@@ -9,4 +9,8 @@ add_library(data_structures
         vector/vector.c
         vectorVoid/vectorVoid.c
         vectorVoid/vectorVoid.h
+        matrix/matrix.h
+        matrix/matrix.c
 )
+
+target_link_libraries(data_structures algorithms)
