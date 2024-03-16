@@ -25,5 +25,15 @@ void freeMemMatrix(matrix *m);
 //  освобождает память, выделенную под хранение массива ms из nMatrices матриц.
 void freeMemMatrices(matrix *ms, int nMatrices);
 
+// ввод матрицы m
+void inputMatrix(matrix *m);
 
+// ввод массива из nMatrices матриц, хранящейся по адресу ms
+void inputMatrices(matrix *ms, int nMatrices);
+
+// вывод матрицы m
+void outputMatrix(matrix m);
+
+//вывод массива из nMatrices матриц, хранящейся по адресу ms
+void outputMatrices(matrix *ms, int nMatrices);
 #endif //UNTITLED1_MATRIX_H

@@ -33,11 +33,45 @@ void freeMemMatrix(matrix *m){
 }
 
 void freeMemMatrices(matrix *ms, int nMatrices){
-    for (size_t i = 0; i < nMatrices; i++)
+    for (int i = 0; i < nMatrices; i++)
         freeMemMatrix(ms + i);
 
     free(ms->values);
     ms->values = NULL;
     ms->nRows = 0;
     ms->nCols = 0;
+}
+
+void inputMatrix(matrix *m){
+    for (int i = 0; i < m->nRows; i++){
+        printf("input %d row:", i + 1);
+        for (int j = 0; j < m->nCols; j++)
+            scanf("%d", &m->values[i][j]);
+    }
+}
+
+void inputMatrices(matrix *ms, int nMatrices){
+    for (int i = 0; i < nMatrices; i++){
+        printf("input %d mitrix\n", i + 1);
+        inputMatrix(ms + 1);
+        printf("\n");
+    }
+}
+
+void outputMatrix(matrix m){
+    for (int i = 0; i < m.nRows; i++){
+        putchar(124);
+        printf(" ");
+        for (int j = 0; j < m.nCols; j++)
+            printf("%d ", m.values[i][j]);
+        putchar(124);
+        printf("\n");
+    }
+
+    printf("\n");
+}
+
+void outputMatrices(matrix *ms, int nMatrices){
+    for (int i = 0; i < nMatrices; i++)
+        outputMatrix(*(ms + i));
 }
