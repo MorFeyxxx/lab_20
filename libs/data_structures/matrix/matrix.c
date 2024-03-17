@@ -171,3 +171,33 @@ bool isSymmetricMatrix(matrix *m){
 
     return true;
 }
+
+void transposeSquareMatrix(matrix *m){
+    if (m->nRows != m->nCols) {
+        fprintf(stderr, "Is not square matrix");
+        exit(1);
+    }
+
+    for (size_t i = 0; i < m->nRows; i++)
+        for (size_t j = i + 1; j < m->nCols; j++)
+            if (i != j)
+                swap(&m->values[i][j], &m->values[j][i]);
+}
+
+void transposeMatrix(matrix *m){
+    int** new_value = (int**) malloc(sizeof(int*) * m->nCols);
+
+    for (size_t i = 0; i < m->nCols; i++) {
+        new_value[i] = (int*) malloc(sizeof(int) * m->nRows);
+
+        for (size_t j = 0; j < m->nRows; j++)
+            new_value[i][j] = m->values[j][i];
+    }
+
+    for (size_t i = 0; i < m->nRows; i++)
+        free(m->values[i]);
+    free(m->values);
+
+    m->values = new_value;
+    swap(&m->nRows, &m->nCols);
+}
