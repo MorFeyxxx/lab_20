@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <malloc.h>
 #include <stdlib.h>
+#include <memory.h>
 #include "../../data_structures/matrix/matrix.h"
 #include "../../algorithms/algorithm.h"
 
@@ -139,4 +140,34 @@ void selectionSortColsMatrixByColCriteria(matrix m, int (*criteria)(int*, int)){
         swap(&res_criteria[value_min_index], &res_criteria[i]);
         swapColumns(m, value_min_index, i);
     }
+}
+
+bool isSquareMatrix(matrix *m){
+    return m->nRows == m->nCols;
+}
+
+bool areTwoMatricesEqual(matrix *m1, matrix *m2){
+    for (size_t i = 0; i < m1->nRows; i++)
+        if (memcmp(m1->values[i], m2->values[i], m1->nCols) != 0)
+            return false;
+
+    return true;
+}
+
+bool isEMatrix(matrix *m){
+    for (size_t i = 0; i < m->nRows; i++)
+        for (size_t j = 0; j < m->nCols; j++)
+            if ((j != i && m->values[i][j] != 0) || (j == i && m->values[i][j] != 1))
+                return false;
+
+    return true;
+}
+
+bool isSymmetricMatrix(matrix *m){
+    for (size_t i = 0; i < m->nRows; i++)
+        for (size_t j = i + 1; j < m->nCols; j++)
+            if (m->values[i][j] != m->values[j][i])
+                return false;
+
+    return true;
 }
