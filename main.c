@@ -59,8 +59,12 @@ void test_swap_min_max_rows() {
     test_swap_min_max_rows_3_min_and_max_elements_in_one_row();
 }
 
-int main() {
+void test(){
+    test_swap_min_max_rows();
+}
 
+int main() {
+    test();
     return 0;
 }
 
