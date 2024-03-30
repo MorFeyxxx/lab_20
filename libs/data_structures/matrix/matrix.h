@@ -40,7 +40,7 @@ void outputMatrix(matrix m);
 void outputMatrices(matrix *ms, int nMatrices);
 
 //обмен строк с порядковыми номерами i1 и i2 в матрице m
-void swapRows(matrix m, int i1, int i2);
+void swapRows(matrix *m, int i1, int i2);
 
 //обмен колонок с порядковыми номерами j1 и j2 в матрице m
 void swapColumns(matrix m, int j1, int j2);

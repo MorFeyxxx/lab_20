@@ -1,12 +1,13 @@
 #include "algorithm.h"
 #include <stdlib.h>
+#include <math.h>
 
 // 1
 void swap_min_max_rows(matrix* m){
     position mx = getMaxValuePos(*m);
     position mn = getMinValuePos(*m);
 
-    swapRows(*m, mx.rowIndex, mn.rowIndex);
+    swapRows(m, mx.rowIndex, mn.rowIndex);
 }
 
 
@@ -163,4 +164,45 @@ int get_min_in_area(matrix m) {
                 min = m.values[i][j];
 
     return min;
+}
+
+
+// 8
+float get_distance(int *a, int n){
+    long long int square_sum = 0;
+
+    for (int i = 0; i < n; i++)
+        square_sum += a[i] * a[i];
+
+    return sqrt(square_sum);
+}
+
+void insertion_sort_rows_matrix_by_row_criteria_F(matrix* m, float (*criteria)(int*, int)) {
+    float res_criteria[m->nRows];
+
+    for (size_t i = 0; i < m->nRows; i++)
+        res_criteria[i] = criteria(m->values[i], m->nCols);
+
+    int i, j;
+    float key;
+    int* address_key;
+    for (i = 1; i < m->nRows; i++) {
+        key = res_criteria[i];
+        address_key = m->values[i];
+        j = i - 1;
+
+        while (j >= 0 && res_criteria[j] > key) {
+            res_criteria[j + 1] = res_criteria[j];
+            swapRows(m, j + 1, j);
+
+            j -= 1;
+        }
+
+        res_criteria[j + 1] = key;
+        m->values[j + 1] = address_key;
+    }
+}
+
+void sort_by_distances(matrix *m){
+    insertion_sort_rows_matrix_by_row_criteria_F(m, get_distance);
 }

@@ -51,4 +51,11 @@ bool value_in_area(position max, int i, int j);
 // возвращает минимальный элемент матрицы m, который находится в зоне
 int get_min_in_area(matrix m);
 
+// возвращает расстояние вектора a размера n, до начала координат
+float get_distance(int *a, int n);
+
+// сортирует строки матрицы m, относительно их удалённости от начала координат
+void sort_by_distances(matrix *m);
+
+
 #endif //UNTITLED1_ALGORITHMS_H

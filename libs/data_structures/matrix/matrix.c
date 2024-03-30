@@ -77,10 +77,10 @@ void outputMatrices(matrix *ms, int nMatrices){
         outputMatrix(*(ms + i));
 }
 
-void swapRows(matrix m, int i1, int i2){
-    int* temp = m.values[i1];
-    m.values[i1] = m.values[i2];
-    m.values[i2] = temp;
+void swapRows(matrix *m, int i1, int i2){
+    int* temp = m->values[i1];
+    m->values[i1] = m->values[i2];
+    m->values[i2] = temp;
 }
 
 void swap(int* a, int* b){
@@ -109,7 +109,7 @@ void insertionSortRowsMatrixByRowCriteria(matrix *m, int (*criteria)(const int*,
 
         while (j >= 0 && res_criteria[j] > key){
             res_criteria[j + 1] = res_criteria[j];
-            swapRows(*m, j + 1, j);
+            swapRows(m, j + 1, j);
             j -= 1;
         }
 
