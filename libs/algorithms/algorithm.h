@@ -57,5 +57,15 @@ float get_distance(int *a, int n);
 // сортирует строки матрицы m, относительно их удалённости от начала координат
 void sort_by_distances(matrix *m);
 
+// компаратор
+int cmp_long_long(const void *pa, const void *pb);
+
+// возвращает количество уникальных элементов массива a размера n
+int count_n_unique(long long *a, int n);
+
+// возвращает количество уникальных сумм строк матрицы m
+int count_eq_classes_by_rows_sum(matrix m);
+
+
 
 #endif //UNTITLED1_ALGORITHMS_H

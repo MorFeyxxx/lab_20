@@ -206,3 +206,36 @@ void insertion_sort_rows_matrix_by_row_criteria_F(matrix* m, float (*criteria)(i
 void sort_by_distances(matrix *m){
     insertion_sort_rows_matrix_by_row_criteria_F(m, get_distance);
 }
+
+
+// 10
+int cmp_long_long(const void* pa, const void* pb) {
+    return (int)(*(long long int*) pa - *(long long int*) pb);
+}
+
+int count_n_unique(long long *a, int n){
+    int amount = 1;
+
+    int i = 0;
+    while (i < n - 1) {
+        if (a[i] != a[i + 1])
+            amount++;
+
+        i++;
+    }
+
+    return amount;
+}
+
+int count_eq_classes_by_rows_sum(matrix m){
+    long long int values[m.nRows];
+
+    for (int i = 0; i < m.nRows; i++)
+        values[i] = get_sum(m.values[i], m.nCols);
+
+    qsort(values, m.nRows, sizeof(long long int), cmp_long_long);
+
+    int result = count_n_unique(values, m.nRows);
+
+    return result;
+}

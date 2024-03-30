@@ -395,6 +395,52 @@ void test_sort_by_distance() {
 }
 
 
+void test_count_eq_classes_by_rows_sum_1_different_sum() {
+    matrix m = createMatrixFromArray((int[]) {7, 1,
+                                                 2, 7,
+                                                 5, 4,
+                                                 4, 3,
+                                                 1, 6,
+                                                 8, 0}, 6, 2);
+
+    int result = count_eq_classes_by_rows_sum(m);
+
+    assert(result == 3);
+
+    freeMemMatrix(&m);
+}
+
+void test_count_eq_classes_by_rows_sum_2_all_sum_different() {
+    matrix m = createMatrixFromArray((int[]) {7, 1,
+                                              5, 7,
+                                              5, 4,}, 3, 2);
+
+    int result = count_eq_classes_by_rows_sum(m);
+
+    assert(result == 3);
+
+    freeMemMatrix(&m);
+}
+
+void test_count_eq_classes_by_rows_sum_3_equal_sum() {
+    matrix m = createMatrixFromArray((int[]) {7, 1,
+                                              5, 3,
+                                              4, 4,}, 3, 2);
+
+    int result = count_eq_classes_by_rows_sum(m);
+
+    assert(result == 1);
+
+    freeMemMatrix(&m);
+}
+
+void test_count_eq_classes_by_rows_sum() {
+    test_count_eq_classes_by_rows_sum_1_different_sum();
+    test_count_eq_classes_by_rows_sum_2_all_sum_different();
+    test_count_eq_classes_by_rows_sum_3_equal_sum();
+}
+
+
 void test(){
     test_swap_min_max_rows();
     test_sort_rows_by_max_element();
@@ -405,6 +451,7 @@ void test(){
     test_find_sum_of_maxes_of_pseudo_diagonal();
     test_get_min_in_area();
     test_sort_by_distance();
+    test_count_eq_classes_by_rows_sum();
 }
 
 int main() {
