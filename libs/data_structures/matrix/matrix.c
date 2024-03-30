@@ -94,51 +94,51 @@ void swapColumns(matrix m, int j1, int j2){
         swap(&m.values[i][j1], &m.values[i][j2]);
 }
 
-void insertionSortRowsMatrixByRowCriteria(matrix m, int (*criteria)(int*, int)){
-    int res_criteria[m.nRows];
+void insertionSortRowsMatrixByRowCriteria(matrix *m, int (*criteria)(const int*, int)){
+    int res_criteria[m->nRows];
 
-    for (int i = 0; i < m.nRows; i++)
-        res_criteria[i] = criteria(m.values[i], m.nCols);
+    for (int i = 0; i < m->nRows; i++)
+        res_criteria[i] = criteria(m->values[i], m->nCols);
 
     int i, j, key;
     int* address_key;
-    for (i = 1; i< m.nRows; i++){
+    for (i = 1; i< m->nRows; i++){
         key = res_criteria[i];
-        address_key = m.values[i];
+        address_key = m->values[i];
         j = i - 1;
 
         while (j >= 0 && res_criteria[j] > key){
             res_criteria[j + 1] = res_criteria[j];
-            swapRows(m, j + 1, j);
+            swapRows(*m, j + 1, j);
             j -= 1;
         }
 
         res_criteria[j + 1] = key;
-        m.values[j + 1] = address_key;
+        m->values[j + 1] = address_key;
     }
 }
 
-void selectionSortColsMatrixByColCriteria(matrix m, int (*criteria)(int*, int)){
-    int res_criteria[m.nCols];
+void selectionSortColsMatrixByColCriteria(matrix *m, int (*criteria)(const int*, int)){
+    int res_criteria[m->nCols];
 
-    for (int i = 0; i < m.nCols; i++){
-        int temp[m.nRows];
-        for (int j = 0; j < m.nRows; j++)
-            temp[j] = m.values[j][i];
+    for (int i = 0; i < m->nCols; i++){
+        int temp[m->nRows];
+        for (int j = 0; j < m->nRows; j++)
+            temp[j] = m->values[j][i];
 
-        res_criteria[i] = criteria(temp, m.nRows);
+        res_criteria[i] = criteria(temp, m->nRows);
     }
 
     int value_min_index;
-    for (int i = 0; i < m.nCols; i++){
+    for (int i = 0; i < m->nCols; i++){
         value_min_index = i;
 
-        for (int j = i + 1; j < m.nCols; j++)
+        for (int j = i + 1; j < m->nCols; j++)
             if (res_criteria[j] < res_criteria[value_min_index])
                 value_min_index = j;
 
         swap(&res_criteria[value_min_index], &res_criteria[i]);
-        swapColumns(m, value_min_index, i);
+        swapColumns(*m, value_min_index, i);
     }
 }
 

@@ -59,12 +59,58 @@ void test_swap_min_max_rows() {
     test_swap_min_max_rows_3_min_and_max_elements_in_one_row();
 }
 
+
+void test_sort_rows_by_max_element_1_standard_value() {
+    matrix m = createMatrixFromArray((int[]) {7, 1, 2,
+                                                 1, 8, 1,
+                                                 3, 2, 3}, 3, 3);
+
+    matrix check = createMatrixFromArray((int[]) {3, 2, 3,
+                                                     7, 1, 2,
+                                                     1, 8, 1},3, 3);
+
+    sort_rows_by_min_element(&m);
+
+    assert(areTwoMatricesEqual(&m, &check));
+
+    freeMemMatrix(&m);
+    freeMemMatrix(&check);
+}
+
+
+void test_sort_rows_by_max_element_2_max_value_equal() {
+    matrix m = createMatrixFromArray((int[]) {8, 2, 3,
+                                                 2, 8, 2,
+                                                 4, 8, 8}, 3, 3);
+
+    matrix check = createMatrixFromArray((int[]) {8, 2, 3,
+                                                     2, 8, 2,
+                                                     4, 8, 8},3, 3);
+
+
+    sort_rows_by_min_element(&m);
+
+    assert(areTwoMatricesEqual(&m, &check));
+
+    freeMemMatrix(&m);
+    freeMemMatrix(&check);
+}
+
+
+void test_sort_rows_by_max_element() {
+    test_sort_rows_by_max_element_1_standard_value();
+    test_sort_rows_by_max_element_2_max_value_equal();
+}
+
+
 void test(){
     test_swap_min_max_rows();
+    test_sort_rows_by_max_element();
 }
 
 int main() {
     test();
+
     return 0;
 }
 

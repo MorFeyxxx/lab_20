@@ -47,11 +47,11 @@ void swapColumns(matrix m, int j1, int j2);
 
 //выполняет сортировку вставками строк матрицы m
 //по неубыванию значения функции criteria применяемой для строк
-void insertionSortRowsMatrixByRowCriteria(matrix m, int (*criteria)(int*, int));
+void insertionSortRowsMatrixByRowCriteria(matrix *m, int (*criteria)(const int*, int));
 
 //выполняет сортировку выбором столбцов матрицы m
 //по неубыванию значения функции criteria применяемой для столбцов
-void selectionSortColsMatrixByColCriteria(matrix m, int (*criteria)(int*, int));
+void selectionSortColsMatrixByColCriteria(matrix *m, int (*criteria)(const int*, int));
 
 //возвращает значение ’истина’, если
 //матрица m является квадратной, ложь – в противном случае

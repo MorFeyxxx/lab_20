@@ -1,5 +1,6 @@
 #include "algorithm.h"
 
+// 1
 void swap_min_max_rows(matrix* m){
     position mx = getMaxValuePos(*m);
     position mn = getMinValuePos(*m);
@@ -7,6 +8,7 @@ void swap_min_max_rows(matrix* m){
     swapRows(*m, mx.rowIndex, mn.rowIndex);
 }
 
+// 2
 int get_max(const int a[], int n){
     int max = a[0];
 
@@ -16,3 +18,8 @@ int get_max(const int a[], int n){
 
     return max;
 }
+
+void sort_rows_by_min_element(matrix* m){
+    insertionSortRowsMatrixByRowCriteria(m, get_max);
+}
+
