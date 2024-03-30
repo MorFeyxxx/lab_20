@@ -8,5 +8,11 @@ void swap_min_max_rows(matrix* m){
 }
 
 int get_max(const int a[], int n){
+    int max = a[0];
 
+    for (size_t i = 1; i < n; i++)
+        if (a[i] > max)
+            max = a[i];
+
+    return max;
 }
