@@ -104,3 +104,14 @@ void transpose_if_matrix_has_not_equal_sum_of_rows(matrix* m) {
     if (is_unique(sum, m->nRows))
         transposeSquareMatrix(m);
 }
+
+// 6
+bool is_mutually_inverse_matrices(matrix m1, matrix m2){
+    matrix multi = mul_matrices(m1, m2);
+
+    bool is_e_matrix = isEMatrix(&multi);
+
+    freeMemMatrix(&multi);
+
+    return is_e_matrix;
+}

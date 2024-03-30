@@ -34,4 +34,8 @@ long long int get_sum(int a[], int n);
 // транспонирует матрицу, если суммы строк различны
 void transpose_if_matrix_has_not_equal_sum_of_rows(matrix* m);
 
+// возвращает true, если матрицы m1 и m2 являются взаимно обратными
+// иначе false
+bool is_mutually_inverse_matrices(matrix m1, matrix m2);
+
 #endif //UNTITLED1_ALGORITHMS_H

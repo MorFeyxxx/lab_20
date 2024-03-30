@@ -159,7 +159,6 @@ void test_mul_matrices_1_standard_value() {
     freeMemMatrix(&check);
 }
 
-
 void test_mul_matrices_2_mul_to_e_matrix() {
     matrix m = createMatrixFromArray((int[]) {1, 0, 0,
                                                   0, 1, 0,
@@ -202,7 +201,6 @@ void test_mul_matrices_3_mul_to_null_matrix() {
     freeMemMatrix(&result);
     freeMemMatrix(&check);
 }
-
 
 void test_mul_matrices() {
     test_mul_matrices_1_standard_value();
@@ -251,12 +249,51 @@ void test_transpose_if_matrix_has_not_equal_sum_of_rows() {
 }
 
 
+void test_is_mutually_inverse_matrices_1_inverse_matrices() {
+    matrix m1 = createMatrixFromArray((int[]) {1, 1,
+                                                  2, 1}, 2, 2);
+
+    matrix m2 = createMatrixFromArray((int[]) {-1, 1,
+                                                  2, -1}, 2, 2);
+
+    bool result = is_mutually_inverse_matrices(m1, m2);
+
+    assert(result == 1);
+
+    freeMemMatrix(&m1);
+    freeMemMatrix(&m2);
+}
+
+
+void test_is_mutually_inverse_matrices_2_not_inverse_matrices() {
+    matrix m1 = createMatrixFromArray((int[]) {1, 1,
+                                                  1, 4}, 2, 2);
+
+    matrix m2 = createMatrixFromArray((int[]) {6, 1,
+                                                  4, -3}, 2, 2);
+
+    bool result = is_mutually_inverse_matrices(m1, m2);
+
+    assert(result == 0);
+
+    freeMemMatrix(&m1);
+    freeMemMatrix(&m2);
+}
+
+
+void test_is_mutually_inverse_matrices() {
+    test_is_mutually_inverse_matrices_1_inverse_matrices();
+    test_is_mutually_inverse_matrices_2_not_inverse_matrices();
+}
+
+
 void test(){
     test_swap_min_max_rows();
     test_sort_rows_by_max_element();
     test_sort_cols_by_min_element();
     test_mul_matrices();
     test_transpose_if_matrix_has_not_equal_sum_of_rows();
+    test_is_mutually_inverse_matrices();
 }
 
 int main() {
