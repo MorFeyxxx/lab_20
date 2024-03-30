@@ -77,7 +77,6 @@ void test_sort_rows_by_max_element_1_standard_value() {
     freeMemMatrix(&check);
 }
 
-
 void test_sort_rows_by_max_element_2_max_value_equal() {
     matrix m = createMatrixFromArray((int[]) {8, 2, 3,
                                                  2, 8, 2,
@@ -96,16 +95,56 @@ void test_sort_rows_by_max_element_2_max_value_equal() {
     freeMemMatrix(&check);
 }
 
-
 void test_sort_rows_by_max_element() {
     test_sort_rows_by_max_element_1_standard_value();
     test_sort_rows_by_max_element_2_max_value_equal();
 }
 
 
+void test_sort_cols_by_min_element_1_standard_value() {
+    matrix m = createMatrixFromArray((int[]) {3, 5, 2, 4, 3, 3,
+                                                 2, 5, 1, 8, 2, 7,
+                                                 6, 1, 4, 4, 8, 3}, 3, 6);
+
+    matrix check = createMatrixFromArray((int[]) {5, 2, 3, 3, 3, 4,
+                                                     5, 1, 2, 2, 7, 8,
+                                                     1, 4, 6, 8, 3, 4},3, 6);
+
+    sort_cols_by_min_element(&m);
+
+    assert(areTwoMatricesEqual(&m, &check));
+
+    freeMemMatrix(&m);
+    freeMemMatrix(&check);
+}
+
+void test_sort_cols_by_min_element_2_min_value_equal() {
+    matrix m = createMatrixFromArray((int[]) {4, 6, 3, 2, 4, 4,
+                                                 2, 6, 2, 9, 2, 8,
+                                                 7, 2, 5, 5, 9, 2}, 3, 6);
+
+    matrix check = createMatrixFromArray((int[]) {4, 6, 3, 2, 4, 4,
+                                                     2, 6, 2, 9, 2, 8,
+                                                     7, 2, 5, 5, 9, 2},3, 6);
+
+    sort_cols_by_min_element(&m);
+
+    assert(areTwoMatricesEqual(&m, &check));
+
+    freeMemMatrix(&m);
+    freeMemMatrix(&check);
+}
+
+void test_sort_cols_by_min_element() {
+    test_sort_cols_by_min_element_1_standard_value();
+    test_sort_cols_by_min_element_2_min_value_equal();
+}
+
+
 void test(){
     test_swap_min_max_rows();
     test_sort_rows_by_max_element();
+    test_sort_cols_by_min_element();
 }
 
 int main() {

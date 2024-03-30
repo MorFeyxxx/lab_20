@@ -12,5 +12,11 @@ int get_max(const int a[], int n);
 // сортирует строки матрицы по неубыванию наибольших элементов строк
 void sort_rows_by_min_element(matrix* m);
 
+// возвращает минимальный элемент массива a размера n
+int get_min(const int *a, int n);
+
+// сортирует столбцы матрицы по неубыванию наименьших элементов строк
+void sort_cols_by_min_element(matrix *m);
+
 
 #endif //UNTITLED1_ALGORITHMS_H
