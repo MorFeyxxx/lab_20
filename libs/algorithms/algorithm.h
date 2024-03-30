@@ -18,5 +18,11 @@ int get_min(const int *a, int n);
 // сортирует столбцы матрицы по неубыванию наименьших элементов строк
 void sort_cols_by_min_element(matrix *m);
 
+// возвращает матрицу, равную перемножению матрицы m1 на матрицу m2
+matrix mul_matrices(matrix m1, matrix m2);
+
+// преобразует симметричную матрицу на её квадрат
+void get_Square_Of_Matrix_If_Symmetric(matrix *m);
+
 
 #endif //UNTITLED1_ALGORITHMS_H
