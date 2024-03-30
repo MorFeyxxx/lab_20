@@ -38,4 +38,11 @@ void transpose_if_matrix_has_not_equal_sum_of_rows(matrix* m);
 // иначе false
 bool is_mutually_inverse_matrices(matrix m1, matrix m2);
 
+// возвращает максимальный элемент между a и b
+int max(int a, int b);
+
+// возвращает сумму максимальных элементов псевдодиагоналей матрицы m
+// только, если элементы матрицы положительны, иначе 0
+long long find_sum_of_maxes_of_pseudo_diagonal(matrix m);
+
 #endif //UNTITLED1_ALGORITHMS_H

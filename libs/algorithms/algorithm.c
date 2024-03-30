@@ -115,3 +115,31 @@ bool is_mutually_inverse_matrices(matrix m1, matrix m2){
 
     return is_e_matrix;
 }
+
+
+// 7
+int max(int a, int b){
+    return a > b ? a : b;
+}
+
+long long find_sum_of_maxes_of_pseudo_diagonal(matrix m){
+    int r = m.nRows;
+    int c = m.nCols;
+    int* max_value = (int*) malloc(sizeof(int) * (r + c - 1));
+
+    for (int i = 0; i < r + c - 1; i++)
+        max_value[i] = 0;
+
+    for (int i = 0; i < r; i++)
+        for (int j = 0; j < c; j++)
+            if (i != j)
+                max_value[i - j + c - 1] = max(max_value[i - j + c - 1], m.values[i][j]);
+
+    long long int sum = 0;
+    for (int i = 0; i < r + c - 1; i++)
+        sum += max_value[i];
+
+    free(max_value);
+
+    return sum;
+}
