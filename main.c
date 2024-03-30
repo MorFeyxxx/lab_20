@@ -441,6 +441,36 @@ void test_count_eq_classes_by_rows_sum() {
 }
 
 
+void test_get_n_special_element_1_standard_value() {
+    matrix m = createMatrixFromArray((int[]) {3, 5, 5, 4,
+                                                 2, 3, 6, 7,
+                                                 12, 2, 1, 2}, 3, 4);
+
+    int result = get_n_special_element(m);
+
+    assert(result == 2);
+
+    freeMemMatrix(&m);
+}
+
+void test_get_n_special_element_2_not_have_special_element() {
+    matrix m = createMatrixFromArray((int[]) {3, 5, 5, 4,
+                                                 2, 3, 6, 7,
+                                                 3, 2, 1, 7}, 3, 4);
+
+    int result = get_n_special_element(m);
+
+    assert(result == 0);
+
+    freeMemMatrix(&m);
+}
+
+void test_get_n_special_element() {
+    test_get_n_special_element_1_standard_value();
+    test_get_n_special_element_2_not_have_special_element();
+}
+
+
 void test(){
     test_swap_min_max_rows();
     test_sort_rows_by_max_element();
@@ -452,6 +482,7 @@ void test(){
     test_get_min_in_area();
     test_sort_by_distance();
     test_count_eq_classes_by_rows_sum();
+    test_get_n_special_element();
 }
 
 int main() {

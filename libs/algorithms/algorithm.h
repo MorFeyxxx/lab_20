@@ -66,6 +66,9 @@ int count_n_unique(long long *a, int n);
 // возвращает количество уникальных сумм строк матрицы m
 int count_eq_classes_by_rows_sum(matrix m);
 
+// возвращает количество "особых" элементов матрицы m
+// элемент считается особенным, если он больше суммы остальных элементов своего столбца
+int get_n_special_element(matrix m);
 
 
 #endif //UNTITLED1_ALGORITHMS_H
