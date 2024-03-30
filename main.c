@@ -312,6 +312,49 @@ void test_find_sum_of_maxes_of_pseudo_diagonal() {
     test_find_sum_of_maxes_of_pseudo_diagonal_2_one_element();
 }
 
+
+void test_get_min_in_area_1_standard_value() {
+    matrix m = createMatrixFromArray((int[]) {10, 7, 5, 6,
+                                                 3, 11, 8, 9,
+                                                 4, 1, 12, 2}, 3, 4);
+
+    int result = get_min_in_area(m);
+
+    assert(result == 5);
+
+    freeMemMatrix(&m);
+}
+
+void test_get_min_in_area_2_max_value_in_first_row() {
+    matrix m = createMatrixFromArray((int[]) {10, 7, 12, 6,
+                                                 3, 11, 8, 9,
+                                                 4, 1, 5, 2}, 3, 4);
+
+    int result = get_min_in_area(m);
+
+    assert(result == 12);
+
+    freeMemMatrix(&m);
+}
+
+void test_get_min_in_area_3_equal_element() {
+    matrix m = createMatrixFromArray((int[]) {0, 0,
+                                                 0, 0}, 2, 2);
+
+    int result = get_min_in_area(m);
+
+    assert(result == 0);
+
+    freeMemMatrix(&m);
+}
+
+void test_get_min_in_area() {
+    test_get_min_in_area_1_standard_value();
+    test_get_min_in_area_2_max_value_in_first_row();
+    test_get_min_in_area_3_equal_element();
+}
+
+
 void test(){
     test_swap_min_max_rows();
     test_sort_rows_by_max_element();
@@ -320,6 +363,7 @@ void test(){
     test_transpose_if_matrix_has_not_equal_sum_of_rows();
     test_is_mutually_inverse_matrices();
     test_find_sum_of_maxes_of_pseudo_diagonal();
+    test_get_min_in_area();
 }
 
 int main() {

@@ -45,4 +45,10 @@ int max(int a, int b);
 // только, если элементы матрицы положительны, иначе 0
 long long find_sum_of_maxes_of_pseudo_diagonal(matrix m);
 
+// возвращает true, если элемент по индексу i,j находится в области элемента max
+bool value_in_area(position max, int i, int j);
+
+// возвращает минимальный элемент матрицы m, который находится в зоне
+int get_min_in_area(matrix m);
+
 #endif //UNTITLED1_ALGORITHMS_H
