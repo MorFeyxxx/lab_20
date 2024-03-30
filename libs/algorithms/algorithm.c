@@ -262,3 +262,29 @@ int get_n_special_element(matrix m){
 
     return amount;
 }
+
+
+// 12
+position get_left_min(matrix m){
+    transposeSquareMatrix(&m);
+
+    position min = getMinValuePos(m);
+
+    transposeSquareMatrix(&m);
+
+    return min;
+}
+
+void swap_penultimate_row(matrix* m, int n){
+    if (m->nRows < 2)
+        return;
+
+    int* temp = (int*) malloc(sizeof(int) * m->nRows);
+    for (int i = 0; i < m->nRows; i++)
+        temp[i] = m->values[i][n];
+
+    for (int i = 0; i < m->nCols; i++)
+        m->values[m->nRows - 2][i] = temp[i];
+
+    free(temp);
+}

@@ -70,5 +70,11 @@ int count_eq_classes_by_rows_sum(matrix m);
 // элемент считается особенным, если он больше суммы остальных элементов своего столбца
 int get_n_special_element(matrix m);
 
+// возвращает position минимального левого элемента
+position get_left_min(matrix m);
+
+// меняет местами предпоследнюю строку матрицы m, на n-ый столбец
+void swap_penultimate_row(matrix* m, int n);
+
 
 #endif //UNTITLED1_ALGORITHMS_H

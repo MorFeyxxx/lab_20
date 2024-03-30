@@ -471,6 +471,44 @@ void test_get_n_special_element() {
 }
 
 
+void test_swap_penultimate_row_1_standard_value() {
+    matrix m = createMatrixFromArray((int[]) {1, 2, 3,
+                                                 4, 5, 6,
+                                                 7, 8, 1}, 3, 3);
+
+    matrix check = createMatrixFromArray((int[]) {1, 2, 3,
+                                                     1, 4, 7,
+                                                     7, 8, 1}, 3, 3);
+
+    position min = get_left_min(m);
+
+    swap_penultimate_row(&m, min.colIndex);
+
+    assert(areTwoMatricesEqual(&m, &check));
+
+    freeMemMatrix(&m);
+    freeMemMatrix(&check);
+}
+
+void test_swap_penultimate_row_2_one_row() {
+    matrix m = createMatrixFromArray((int[]) {1, 2, 3}, 1, 3);
+
+    matrix check = createMatrixFromArray((int[]) {1, 2, 3}, 1, 3);
+
+    swap_penultimate_row(&m, 0);
+
+    assert(areTwoMatricesEqual(&m, &check));
+
+    freeMemMatrix(&m);
+    freeMemMatrix(&check);
+}
+
+void test_swap_penultimate_row() {
+    test_swap_penultimate_row_1_standard_value();
+    test_swap_penultimate_row_2_one_row();
+}
+
+
 void test(){
     test_swap_min_max_rows();
     test_sort_rows_by_max_element();
@@ -483,6 +521,7 @@ void test(){
     test_sort_by_distance();
     test_count_eq_classes_by_rows_sum();
     test_get_n_special_element();
+    test_swap_penultimate_row();
 }
 
 int main() {
