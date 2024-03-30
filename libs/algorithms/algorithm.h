@@ -22,7 +22,16 @@ void sort_cols_by_min_element(matrix *m);
 matrix mul_matrices(matrix m1, matrix m2);
 
 // преобразует симметричную матрицу на её квадрат
-void get_Square_Of_Matrix_If_Symmetric(matrix *m);
+void get_square_of_matrix_if_symmetric(matrix *m);
 
+// возвращает true, если массив a размера n состоит только из уникальных элементов
+// иначе false
+bool is_unique(long long int a[], int n);
+
+// возвращает сумму элементов массива a размера n
+long long int get_sum(int a[], int n);
+
+// транспонирует матрицу, если суммы строк различны
+void transpose_if_matrix_has_not_equal_sum_of_rows(matrix* m);
 
 #endif //UNTITLED1_ALGORITHMS_H

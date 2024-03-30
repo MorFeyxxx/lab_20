@@ -60,7 +60,7 @@ matrix mul_matrices(matrix m1, matrix m2){
     return res;
 }
 
-void get_Square_Of_Matrix_If_Symmetric(matrix *m){
+void get_square_of_matrix_if_symmetric(matrix *m){
     if (!isSymmetricMatrix(m)){
         fprintf(stderr, "The matrix is not symmetric");
         exit(1);
@@ -73,4 +73,34 @@ void get_Square_Of_Matrix_If_Symmetric(matrix *m){
     m->values = res.values;
     m->nRows = res.nRows;
     m->nCols = res.nCols;
+}
+
+
+// 5
+bool is_unique(long long int a[], int n) {
+    for (int i = 0; i < n; i++)
+        for (int j = i + 1; j < n; j++)
+            if (a[i] == a[j])
+                return false;
+
+    return true;
+}
+
+long long int get_sum(int a[], int n) {
+    long long int res = 0;
+
+    for (int i = 0; i < n; i++)
+        res += a[i];
+
+    return res;
+}
+
+void transpose_if_matrix_has_not_equal_sum_of_rows(matrix* m) {
+    long long int sum[m->nRows];
+
+    for (int i = 0; i < m->nRows; i++)
+        sum[i] = get_sum(m->values[i], m->nCols);
+
+    if (is_unique(sum, m->nRows))
+        transposeSquareMatrix(m);
 }

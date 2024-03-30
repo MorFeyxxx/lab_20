@@ -146,7 +146,7 @@ void test_mul_matrices_1_standard_value() {
                                                   2, 1, 2,
                                                   3, 2, 1}, 3, 3);
 
-    get_Square_Of_Matrix_If_Symmetric(&m);
+    get_square_of_matrix_if_symmetric(&m);
 
     matrix check = createMatrixFromArray((int[]) {14, 10, 10,
                                                      10, 9, 10,
@@ -165,7 +165,7 @@ void test_mul_matrices_2_mul_to_e_matrix() {
                                                   0, 1, 0,
                                                   0, 0, 1}, 3, 3);
 
-    get_Square_Of_Matrix_If_Symmetric(&m);
+    get_square_of_matrix_if_symmetric(&m);
 
 
     matrix check = createMatrixFromArray((int[]) {1, 0, 0,
@@ -210,11 +210,53 @@ void test_mul_matrices() {
     test_mul_matrices_3_mul_to_null_matrix();
 }
 
+
+void test_transpose_if_matrix_has_not_equal_sum_of_rows_1_standard_value() {
+    matrix m = createMatrixFromArray((int[]) {1, 2, 3,
+                                                 4, 5, 6,
+                                                 7, 8, 9}, 3, 3);
+
+    matrix check = createMatrixFromArray((int[]) {1, 4, 7,
+                                                     2, 5, 8,
+                                                     3, 6, 9}, 3, 3);
+
+    transpose_if_matrix_has_not_equal_sum_of_rows(&m);
+
+    assert(areTwoMatricesEqual(&m, &check));
+
+    freeMemMatrix(&m);
+    freeMemMatrix(&check);
+}
+
+void test_transpose_if_matrix_has_not_equal_sum_of_rows_2_not_different_sum() {
+    matrix m = createMatrixFromArray((int[]) {1, 0, 1,
+                                                 2, 1, 2,
+                                                 0, 0, 2}, 3, 3);
+
+    matrix check = createMatrixFromArray((int[]) {1, 0, 1,
+                                                     2, 1, 2,
+                                                     0, 0, 2}, 3, 3);
+
+    transpose_if_matrix_has_not_equal_sum_of_rows(&m);
+
+    assert(areTwoMatricesEqual(&m, &check));
+
+    freeMemMatrix(&m);
+    freeMemMatrix(&check);
+}
+
+void test_transpose_if_matrix_has_not_equal_sum_of_rows() {
+    test_transpose_if_matrix_has_not_equal_sum_of_rows_1_standard_value();
+    test_transpose_if_matrix_has_not_equal_sum_of_rows_2_not_different_sum();
+}
+
+
 void test(){
     test_swap_min_max_rows();
     test_sort_rows_by_max_element();
     test_sort_cols_by_min_element();
     test_mul_matrices();
+    test_transpose_if_matrix_has_not_equal_sum_of_rows();
 }
 
 int main() {
