@@ -146,16 +146,16 @@ void test_mul_matrices_1_standard_value() {
                                                   2, 1, 2,
                                                   3, 2, 1}, 3, 3);
 
-    matrix result = mul_matrices(m, m);
+    get_Square_Of_Matrix_If_Symmetric(&m);
 
     matrix check = createMatrixFromArray((int[]) {14, 10, 10,
                                                      10, 9, 10,
                                                      10, 10, 14}, 3, 3);
 
-    assert(areTwoMatricesEqual(&result, &check));
+    assert(areTwoMatricesEqual(&m, &check));
 
     freeMemMatrix(&m);
-    freeMemMatrix(&result);
+    freeMemMatrix(&m);
     freeMemMatrix(&check);
 }
 
@@ -165,17 +165,17 @@ void test_mul_matrices_2_mul_to_e_matrix() {
                                                   0, 1, 0,
                                                   0, 0, 1}, 3, 3);
 
-    matrix result = mul_matrices(m, m);
+    get_Square_Of_Matrix_If_Symmetric(&m);
 
 
     matrix check = createMatrixFromArray((int[]) {1, 0, 0,
                                                      0, 1, 0,
                                                      0, 0, 1}, 3, 3);
 
-    assert(areTwoMatricesEqual(&result, &check));
+    assert(areTwoMatricesEqual(&m, &check));
 
     freeMemMatrix(&m);
-    freeMemMatrix(&result);
+    freeMemMatrix(&m);
     freeMemMatrix(&check);
 }
 
