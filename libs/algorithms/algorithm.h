@@ -119,4 +119,16 @@ bool is_special_element(int *a, int n, int index);
 // а справа большие
 int get_n_special_element_2(matrix m);
 
+// возвращает скалярное произведение массива a размера n на массив b размера n
+double get_scalar_product(int *a, int *b, int n);
+
+// возвращает длину вектора a размера n
+double get_vector_length(int *a, int n);
+
+// возвращает косинус между вектором a размера n и вектором b размера n
+double get_cosine(int *a, int *b, int n);
+
+// возвращает индекс строки матрицы m, которая образует максимальный угол с данным вектором b
+int get_vector_index_with_max_angle(matrix m, int* b);
+
 #endif //UNTITLED1_ALGORITHMS_H

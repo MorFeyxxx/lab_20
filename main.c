@@ -614,6 +614,41 @@ void test_get_n_special_element_2() {
     test_get_n_special_element_2_2_not_have_special_element();
 }
 
+
+void test_get_vector_index_with_max_angle_1_different_angle() {
+    matrix v = createMatrixFromArray((int[]) {1, 2, 3,
+                                                 4, 5, 6,
+                                                 7, 8, 9}, 3, 3);
+
+    int b[3] = {3, 1, 2};
+
+    int result = get_vector_index_with_max_angle(v, b);
+
+    assert(result == 0);
+
+    freeMemMatrix(&v);
+}
+
+void test_get_vector_index_with_max_angle_2_equal_angle() {
+    matrix v = createMatrixFromArray((int[]) {1, 2, 3,
+                                                 1, 2, 3,
+                                                 1, 2, 3}, 3, 3);
+
+    int b[3] = {3, 1, 2};
+
+    int result = get_vector_index_with_max_angle(v, b);
+
+    assert(result == 0);
+
+    freeMemMatrix(&v);
+}
+
+void test_get_vector_index_with_max_angle() {
+    test_get_vector_index_with_max_angle_1_different_angle();
+    test_get_vector_index_with_max_angle_2_equal_angle();
+}
+
+
 void test(){
     test_swap_min_max_rows();
     test_sort_rows_by_max_element();
@@ -631,6 +666,7 @@ void test(){
     //test_print_matrix_with_max_zero_rows();
     //test_print_matrix_with_min_standard();
     test_get_n_special_element_2();
+    test_get_vector_index_with_max_angle();
 }
 
 int main() {
