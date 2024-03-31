@@ -76,5 +76,18 @@ position get_left_min(matrix m);
 // меняет местами предпоследнюю строку матрицы m, на n-ый столбец
 void swap_penultimate_row(matrix* m, int n);
 
+// возвращает true, если массив a размера n отсортирован по не убыванию
+// иначе false
+bool is_non_descending_sorted(const int *a, int n);
+
+// возвращает true, если все строки матрицы m отсортированы по не убыванию
+// иначе false
+bool has_all_non_descending_rows(matrix m);
+
+// возвращает количество матриц, из массива матриц ms размера n_matrix,
+// строки в которых упорядочены по не убыванию
+int count_non_descending_rows_matrices(matrix *ms, int n_matrix);
+
+
 
 #endif //UNTITLED1_ALGORITHMS_H
