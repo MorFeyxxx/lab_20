@@ -109,4 +109,14 @@ int get_max_abs_value_in_matrix(matrix m);
 // за норму берут максимум из абсолютных величин матрицы
 void print_matrix_with_min_standard(matrix *ms, int n_matrix);
 
+// возвращает true, если элемент по индексу index в массиве a размера n является особенным
+// элемент особенный, если в строке слева от него находятся только меньшие элементы,
+// иначе false
+bool is_special_element(int *a, int n, int index);
+
+// возвращает количество "особых" элементов матрицы m
+// элемент считается особенным, если в строке слева от него находятся только меньшие элементы,
+// а справа большие
+int get_n_special_element_2(matrix m);
+
 #endif //UNTITLED1_ALGORITHMS_H
