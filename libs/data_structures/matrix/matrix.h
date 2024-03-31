@@ -34,7 +34,7 @@ void inputMatrix(matrix *m);
 void inputMatrices(matrix *ms, int nMatrices);
 
 // вывод матрицы m
-void outputMatrix(matrix m);
+void outputMatrix(matrix *m);
 
 //вывод массива из nMatrices матриц, хранящейся по адресу ms
 void outputMatrices(matrix *ms, int nMatrices);

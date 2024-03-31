@@ -513,7 +513,8 @@ void test_count_non_descending_rows_matrices_standard_value() {
     matrix *ms = createArrayOfMatrixFromArray((int[]){7, 1, 1, 1,
                                                             1, 6, 2, 2,
                                                             5, 4 ,2, 3,
-                                                            1, 3,7, 9}, 4, 2, 2);
+                                                            1, 3,7, 9},
+                                              4, 2, 2);
 
     int res = count_non_descending_rows_matrices(ms, 4);
 
@@ -541,6 +542,34 @@ void test_count_non_descending_rows_matrices() {
 }
 
 
+void test_print_matrix_with_max_zero_rows_standard_value(){
+    matrix *ms = createArrayOfMatrixFromArray((int[]){0, 1, 1, 0, 0, 0,
+                                                            1, 1, 2, 1, 1, 1,
+                                                            0, 0, 0, 0, 4, 7},
+                                              3, 3, 2);
+
+    print_matrix_with_max_zero_rows(ms, 3);
+
+    freeMemMatrices(ms, 3);
+}
+
+void test_print_matrix_with_max_zero_rows_non_zero_rows(){
+    matrix *ms = createArrayOfMatrixFromArray((int[]){1, 1, 1, 1,
+                                                            2, 2, 2, 2,
+                                                            3, 3, 3, 3},
+                                                        3, 2, 2);
+
+    print_matrix_with_max_zero_rows(ms, 3);
+
+    freeMemMatrices(ms, 3);
+}
+
+void test_print_matrix_with_max_zero_rows() {
+    test_print_matrix_with_max_zero_rows_standard_value();
+    test_print_matrix_with_max_zero_rows_non_zero_rows();
+}
+
+
 void test(){
     test_swap_min_max_rows();
     test_sort_rows_by_max_element();
@@ -555,6 +584,7 @@ void test(){
     test_get_n_special_element();
     test_swap_penultimate_row();
     test_count_non_descending_rows_matrices();
+    test_print_matrix_with_max_zero_rows();
 }
 
 int main() {

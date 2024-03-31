@@ -88,6 +88,16 @@ bool has_all_non_descending_rows(matrix m);
 // строки в которых упорядочены по не убыванию
 int count_non_descending_rows_matrices(matrix *ms, int n_matrix);
 
+// возвращает количество элементов value в массиве a размера n
+int count_values(const int *a, int n, int value);
+
+// возвращает количество нулевых строк в матрицы m
+int count_zero_rows(matrix m);
+
+// выводит матрицы, из массива матриц ms размера n_matrix,
+// с максимальным числом нулевых строк
+void print_matrix_with_max_zero_rows(matrix *ms, int nMatrix);
+
 
 
 #endif //UNTITLED1_ALGORITHMS_H
