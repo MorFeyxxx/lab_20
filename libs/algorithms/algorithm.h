@@ -98,6 +98,15 @@ int count_zero_rows(matrix m);
 // с максимальным числом нулевых строк
 void print_matrix_with_max_zero_rows(matrix *ms, int nMatrix);
 
+// возвращает максимальное абсолютное значение в массиве a размера n
+int get_max_abs_value(const int *a, int n);
 
+// возвращает максимальное абсолютное значение в матрице m
+int get_max_abs_value_in_matrix(matrix m);
+
+// выводит матрицы, из массива матриц ms размера n_matrix,
+// с минимальной нормой
+// за норму берут максимум из абсолютных величин матрицы
+void print_matrix_with_min_standard(matrix *ms, int n_matrix);
 
 #endif //UNTITLED1_ALGORITHMS_H
