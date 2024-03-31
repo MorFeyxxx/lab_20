@@ -554,9 +554,9 @@ void test_print_matrix_with_max_zero_rows_standard_value(){
 }
 
 void test_print_matrix_with_max_zero_rows_non_zero_rows(){
-    matrix *ms = createArrayOfMatrixFromArray((int[]){1, 1, 1, 1,
-                                                            2, 2, 2, 2,
-                                                            3, 3, 3, 3},
+    matrix *ms = createArrayOfMatrixFromArray((int[]){1, 1, 2, 2,
+                                                            2, 2, 3, 3,
+                                                            3, 3, 4, 4},
                                                         3, 2, 2);
 
     print_matrix_with_max_zero_rows(ms, 3);
