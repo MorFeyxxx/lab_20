@@ -131,4 +131,11 @@ double get_cosine(int *a, int *b, int n);
 // возвращает индекс строки матрицы m, которая образует максимальный угол с данным вектором b
 int get_vector_index_with_max_angle(matrix m, int* b);
 
+// возвращает скалярное произведение i-ой строки матрицы m, на j-ый столбец матрицы m
+long long int get_scalar_product_row_and_col(matrix m, int i, int j);
+
+// возвращает скалярное произведение строки матрицы m, в которой находится наибольший элемент матрицы,
+// на столбец матрицы m с минимальным элементом
+long long int get_special_scalar_product(matrix m);
+
 #endif //UNTITLED1_ALGORITHMS_H

@@ -481,3 +481,23 @@ int get_vector_index_with_max_angle(matrix m, int* b) {
 
     return index_max_angle;
 }
+
+
+// 18
+long long int get_scalar_product_row_and_col(matrix m, int i, int j) {
+    long long int result = 0;
+
+    for (int k = 0; k < m.nRows; k++)
+        result += m.values[i][k] * m.values[k][j];
+
+    return result;
+}
+
+long long int get_special_scalar_product(matrix m) {
+    position max = getMaxValuePos(m);
+    position min = getMinValuePos(m);
+
+    long long int result = get_scalar_product_row_and_col(m, max.rowIndex, min.colIndex);
+
+    return result;
+}

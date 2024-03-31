@@ -649,6 +649,36 @@ void test_get_vector_index_with_max_angle() {
 }
 
 
+void test_get_special_scalar_product_1_standard_value() {
+    matrix m = createMatrixFromArray((int[]) {1, 4, 7,
+                                                 2, 5, 8,
+                                                 3, 6, 9}, 3, 3);
+
+    long long int result = get_special_scalar_product(m);
+
+    assert(result == 42);
+
+    freeMemMatrix(&m);
+}
+
+void test_get_special_scalar_product_2_max_min_element_in_equal_row_and_col() {
+    matrix m = createMatrixFromArray((int[]) {1, 4, 9,
+                                                 2, 5, 8,
+                                                 3, 6, 7}, 3, 3);
+
+    long long int result = get_special_scalar_product(m);
+
+    assert(result == 36);
+
+    freeMemMatrix(&m);
+}
+
+void test_get_special_scalar_product() {
+    test_get_special_scalar_product_1_standard_value();
+    test_get_special_scalar_product_2_max_min_element_in_equal_row_and_col();
+}
+
+
 void test(){
     test_swap_min_max_rows();
     test_sort_rows_by_max_element();
@@ -667,6 +697,7 @@ void test(){
     //test_print_matrix_with_min_standard();
     test_get_n_special_element_2();
     test_get_vector_index_with_max_angle();
+    test_get_special_scalar_product();
 }
 
 int main() {
