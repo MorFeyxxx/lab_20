@@ -14,3 +14,10 @@ char* find(char *begin, char *end, int ch){
 
     return begin;
 }
+
+char* find_non_space(char *begin){
+    while (*begin != '\0' && isspace(*begin))
+        begin++;
+
+    return begin;
+}
