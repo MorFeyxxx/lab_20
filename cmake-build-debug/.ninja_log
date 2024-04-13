@@ -35,3 +35,17 @@
 382	556	7347209900567816	libs/algorithms/libalgorithms.a	89be21accb167107
 556	678	7347209901826295	libs/data_structures/libdata_structures.a	95aac76417a1bb79
 678	852	7347209903478147	untitled1.exe	a94919ba6effaa87
+32	311	7347229784914174	CMakeFiles/str.dir/string/string_.c.obj	89615c37ebf8d6a9
+38	343	7347229784934186	libs/data_structures/CMakeFiles/data_structures.dir/bitset/bitset.c.obj	607f9a3b758e8592
+4	344	7347229785034209	CMakeFiles/untitled1.dir/main.c.obj	b088a15c86f00de5
+43	345	7347229785094216	libs/data_structures/CMakeFiles/data_structures.dir/unordered_array_set/unordered_array_set.c.obj	6fa4e2a7be6d90af
+68	347	7347229785124225	libs/data_structures/CMakeFiles/data_structures.dir/vectorVoid/vectorVoid.c.obj	b97dee58e40ed965
+62	348	7347229785154227	libs/data_structures/CMakeFiles/data_structures.dir/vector/vector.c.obj	56db4d2c11142eb
+83	354	7347229785184241	libs/algorithms/CMakeFiles/algorithms.dir/array/array.c.obj	48aa34f6d97e852d
+49	355	7347229785214247	libs/data_structures/CMakeFiles/data_structures.dir/ordered_array_set/ordered_array_set.c.obj	ce6498da3da6ea2c
+56	356	7347229785274250	libs/data_structures/CMakeFiles/data_structures.dir/matrix/matrix.c.obj	3d458557d2db2cbe
+75	379	7347229785734355	libs/algorithms/CMakeFiles/algorithms.dir/algorithm.c.obj	b2b95edf1f10a4a6
+312	550	7347229787414745	libstr.a	7a233468f570d87e
+380	562	7347229787564773	libs/algorithms/libalgorithms.a	89be21accb167107
+562	685	7347229788805058	libs/data_structures/libdata_structures.a	95aac76417a1bb79
+685	886	7347229790735490	untitled1.exe	a94919ba6effaa87
