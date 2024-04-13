@@ -60,7 +60,7 @@ void test_find_space_a_space_between_two_elements(){
 
 void test_find_space_is_no_space(){
     char s[] = "abc";
-    char *find_element = find_non_space(s);
+    char *find_element = find_space(s);
 
     assert(find_element == &s[3]);
 }
