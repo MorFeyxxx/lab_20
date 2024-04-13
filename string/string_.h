@@ -29,4 +29,9 @@ char* find_non_space_reverse(char *r_begin, const char *r_end);
 // возвращает указатель на первый пробельный символ справа, расположенный на ленте памяти, начиная с rbegin и
 // заканчивая rend. Если символ не найден, возвращается адрес rend.
 char* find_space_reverse(char *r_begin, const char *r_end);
+
+//проверяет строки на равенство. Возвращает отрицательное значение, если lhs располагается до rhs
+//в лексикографическом порядке (как в словаре), значение 0, если lhs и rhs равны,
+// иначе – положительное значение.
+int strcmp_(const char *lhs, const char *rhs);
 #endif //UNTITLED1_STRING__H
