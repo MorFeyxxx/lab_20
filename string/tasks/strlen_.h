@@ -8,6 +8,7 @@ void test_strlen_with_reserved_memory(){
 
     size_t len = strlen_(s);
     assert(len == 5);
+
 }
 
 void test_strlen_empty(){
