@@ -7,6 +7,7 @@ int main() {
     test_find_non_space();
     test_find_space();
     test_find_non_space_reverse();
+    test_find_space_reverse();
 
     return 0;
 }

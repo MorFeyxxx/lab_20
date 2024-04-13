@@ -35,3 +35,10 @@ char* find_non_space_reverse(char* r_begin, const char* r_end) {
 
     return r_begin;
 }
+
+char* find_space_reverse(char *r_begin, const char *r_end){
+    while (r_begin != r_end && !isspace(*r_begin))
+        r_begin--;
+
+    return r_begin;
+}
