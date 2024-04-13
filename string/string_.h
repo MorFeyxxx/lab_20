@@ -1,0 +1,6 @@
+#ifndef UNTITLED1_STRING__H
+#define UNTITLED1_STRING__H
+
+
+
+#endif //UNTITLED1_STRING__H

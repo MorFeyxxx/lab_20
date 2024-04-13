@@ -8,3 +8,8 @@ add_executable(untitled1 main.c)
 add_subdirectory(libs)
 target_link_libraries(untitled1 data_structures)
 target_link_libraries(untitled1 algorithms)
+
+add_library(str string/string_.h
+        string/string_.c)
+
+target_link_libraries(untitled1 str)
