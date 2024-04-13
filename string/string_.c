@@ -42,3 +42,12 @@ char* find_space_reverse(char *r_begin, const char *r_end){
 
     return r_begin;
 }
+
+int strcmp_(const char *lhs, const char *rhs){
+    while (*lhs != '\0' && *rhs != '\0' && *lhs == *rhs){
+        lhs++;
+        rhs++;
+    }
+
+    return *(const unsigned char*) lhs - *(const unsigned char*) rhs;
+}
