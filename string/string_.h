@@ -21,4 +21,8 @@ char* find_non_space(char *begin);
 // или на первый ноль-символ.
 char* find_space(char *begin);
 
+// возвращает указатель на первый справа символ, отличный от пробельных,
+// расположенный на ленте памяти, начиная с rbegin и заканчивая rend.
+// Если символ не найден, возвращается адрес rend
+char* find_non_space_reverse(char *rbegin, const char *rend);
 #endif //UNTITLED1_STRING__H
