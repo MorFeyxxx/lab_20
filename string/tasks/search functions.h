@@ -50,4 +50,32 @@ void test_find_non_space(){
     test_find_non_space_is_no_space();
 }
 
+
+void test_find_space_a_space_between_two_elements(){
+    char s[] = "a b";
+    char *find_element = find_space(s);
+
+    assert(find_element == &s[1]);
+}
+
+void test_find_space_is_no_space(){
+    char s[] = "abc";
+    char *find_element = find_non_space(s);
+
+    assert(find_element == &s[3]);
+}
+
+void test_find_space_space_is_the_first_element(){
+    char s[] = " b";
+    char *find_element = find_space(s);
+
+    assert(find_element == &s[0]);
+}
+
+void test_find_space(){
+    test_find_space_a_space_between_two_elements();
+    test_find_space_is_no_space();
+    test_find_space_space_is_the_first_element();
+}
+
 #endif //UNTITLED1_SEARCH_FUNCTIONS_H
