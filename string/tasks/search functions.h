@@ -105,4 +105,25 @@ void test_find_non_space_reverse(){
     test_find_non_space_reverse_the_desired_element_is_not_in_the_range();
     test_find_non_space_reverse_is_no_space();
 }
+
+
+void test_find_space_reverse_the_desired_element_in_the_range(){
+    char s[] = "ab de";
+    char *find_element = find_space_reverse(&s[4], s - 1);
+
+    assert(find_element == &s[2]);
+}
+
+void test_find_space_reverse_is_no_space(){
+    char s[] = "abcde";
+    char *find_element = find_space_reverse(&s[4], s - 1);
+
+    assert(find_element == s - 1);
+}
+
+void test_find_space_reverse(){
+    test_find_space_reverse_the_desired_element_in_the_range();
+    test_find_space_reverse_is_no_space();
+}
+
 #endif //UNTITLED1_SEARCH_FUNCTIONS_H
