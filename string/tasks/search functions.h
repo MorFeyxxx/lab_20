@@ -27,21 +27,21 @@ void test_find_non_space_the_desired_element_in_the_range(){
     char s[] = "   a   ";
     char *find_element = find_non_space(s);
 
-    assert(find_element = &s[3]);
+    assert(find_element == &s[3]);
 }
 
 void test_find_non_space_the_desired_element_is_not_in_the_range(){
-    char s[] = "      ";
+    char s[] = "   ";
     char *find_element = find_non_space(s);
 
-    assert(find_element = &s[7]);
+    assert(find_element == &s[3]);
 }
 
 void test_find_non_space_is_no_space(){
     char s[] = "abc";
     char *find_element = find_non_space(s);
 
-    assert(find_element = &s[0]);
+    assert(find_element == &s[0]);
 }
 
 void test_find_non_space(){
