@@ -13,4 +13,8 @@ size_t strlen_(const char* begin);
 // адресами begin и end, не включая end
 char* find(char *begin, char *end, int ch);
 
+// возвращает указатель на первый символ, отличный от пробельных, расположенный на ленте памяти,
+// начиная с begin и заканчивая ноль-символом. Если символ не найден, возвращается адрес первого ноль-символа
+char* find_non_space(char *begin);
+
 #endif //UNTITLED1_STRING__H
