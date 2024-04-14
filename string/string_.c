@@ -67,3 +67,14 @@ char* copy_if(char *begin_source, const char *end_source, char *begin_destinatio
 
     return begin_destination;
 }
+
+char* copy_if_reverse(char *r_begin_source, const char *r_end_source, char *begin_destination, int (*f)(int)){
+    unsigned int range = r_begin_source - r_end_source;
+
+    for (; range > 0; range--){
+        if (f(r_end_source[range]))
+            begin_destination = copy(&r_end_source[range], &r_end_source[range + 1], begin_destination);
+    }
+
+    return begin_destination;
+}

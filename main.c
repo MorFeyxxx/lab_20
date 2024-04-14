@@ -13,6 +13,7 @@ int main() {
     test_strcmp_();
     test_copy();
     test_copy_if();
+    test_copy_if_reverse();
 
     return 0;
 }
