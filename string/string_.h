@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <ctype.h>
 #include <assert.h>
+#include <memory.h>
 
 // возвращает количество символов в строке
 size_t strlen_(const char* begin);

@@ -51,3 +51,8 @@ int strcmp_(const char *lhs, const char *rhs){
 
     return *(const unsigned char*) lhs - *(const unsigned char*) rhs;
 }
+
+char* copy(const char *begin_source, const char *end_source, char *begin_destination){
+    memcpy(begin_destination, begin_source, end_source - begin_source);
+    return begin_destination + (end_source - begin_source);
+}
