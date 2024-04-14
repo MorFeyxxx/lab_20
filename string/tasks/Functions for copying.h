@@ -44,7 +44,6 @@ void test_copy_if_1() {
 
     char *p = copy_if(s, s + strlen_(s), s_copy, isalpha);
 
-    printf("%s\n%s\n", s, s_copy);
     assert(strcmp_(s_copy, "abcd") == 0);
     assert(p == &s_copy[4]);
 }
@@ -55,7 +54,6 @@ void test_copy_if_2() {
 
     char *p = copy_if(s, s + strlen_(s) - 1, s_copy, test);
 
-    printf("%s\n%s\n", s, s_copy);
     assert(strcmp_(s_copy, "134") == 0);
     assert(p == &s_copy[3]);
 }

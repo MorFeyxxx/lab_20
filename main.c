@@ -12,6 +12,7 @@ int main() {
     test_find_space_reverse();
     test_strcmp_();
     test_copy();
+    test_copy_if();
 
     return 0;
 }

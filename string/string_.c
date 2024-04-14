@@ -56,3 +56,14 @@ char* copy(const char *begin_source, const char *end_source, char *begin_destina
     memcpy(begin_destination, begin_source, end_source - begin_source);
     return begin_destination + (end_source - begin_source);
 }
+
+char* copy_if(char *beginSource, const char *endSource, char *beginDestination, int (*f)(int)){
+    unsigned int range = endSource - beginSource;
+
+    for (unsigned int i = 0; i < range; i++){
+        if (f(beginSource[i]))
+            beginDestination = copy(&beginSource[i], &beginSource[i+1], beginDestination);
+    }
+
+    return beginDestination;
+}
