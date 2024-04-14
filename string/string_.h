@@ -2,7 +2,6 @@
 #define UNTITLED1_STRING__H
 
 #include <stdio.h>
-#include <stdbool.h>
 #include <ctype.h>
 #include <assert.h>
 
@@ -34,4 +33,8 @@ char* find_space_reverse(char *r_begin, const char *r_end);
 //в лексикографическом порядке (как в словаре), значение 0, если lhs и rhs равны,
 // иначе – положительное значение.
 int strcmp_(const char *lhs, const char *rhs);
+
+//записывает по адресу beginDestination фрагмент памяти, начиная с адреса beginSource до endSource.
+//Возвращает указатель на следующий свободный фрагмент памяти в destination
+char* copy(const char *begin_source, const char *end_source, char *begin_destination);
 #endif //UNTITLED1_STRING__H
