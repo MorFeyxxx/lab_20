@@ -22,25 +22,31 @@ char* find_non_space(char *begin);
 char* find_space(char *begin);
 
 // возвращает указатель на первый справа символ, отличный от пробельных,
-// расположенный на ленте памяти, начиная с rbegin и заканчивая rend.
-// Если символ не найден, возвращается адрес rend
+// расположенный на ленте памяти, начиная с r_begin и заканчивая r_end.
+// Если символ не найден, возвращается адрес r_end
 char* find_non_space_reverse(char *r_begin, const char *r_end);
 
-// возвращает указатель на первый пробельный символ справа, расположенный на ленте памяти, начиная с rbegin и
-// заканчивая rend. Если символ не найден, возвращается адрес rend.
+// возвращает указатель на первый пробельный символ справа, расположенный на ленте памяти, начиная с r_begin и
+// заканчивая r_end. Если символ не найден, возвращается адрес r_end.
 char* find_space_reverse(char *r_begin, const char *r_end);
 
-//проверяет строки на равенство. Возвращает отрицательное значение, если lhs располагается до rhs
-//в лексикографическом порядке (как в словаре), значение 0, если lhs и rhs равны,
+// проверяет строки на равенство. Возвращает отрицательное значение, если lhs располагается до rhs
+// в лексикографическом порядке (как в словаре), значение 0, если lhs и rhs равны,
 // иначе – положительное значение.
 int strcmp_(const char *lhs, const char *rhs);
 
-//записывает по адресу beginDestination фрагмент памяти, начиная с адреса beginSource до endSource.
-//Возвращает указатель на следующий свободный фрагмент памяти в destination
+// записывает по адресу begin_destination фрагмент памяти, начиная с адреса begin_source до end_source.
+// Возвращает указатель на следующий свободный фрагмент памяти в destination
 char* copy(const char *begin_source, const char *end_source, char *begin_destination);
 
-// записывает по адресу beginDestination элементы из фрагмента памяти начиная с beginSource
-// заканчивая endSource, удовлетворяющие функции-предикату f. Функция возвращает указатель на
+// записывает по адресу begin_destination элементы из фрагмента памяти начиная с begin_source
+// заканчивая end_source, удовлетворяющие функции-предикату f. Функция возвращает указатель на
 // следующий свободный для записи фрагмент в памяти.
-char* copy_if(char *beginSource, const char *endSource, char *beginDestination, int (*f)(int));
+char* copy_if(char *begin_source, const char *end_source, char *begin_destination, int (*f)(int));
+
+// записывает по адресу begin_destination элементы из фрагмента памяти начиная с r_begin_source
+// заканчивая r_end_source, удовлетворяющие функции-предикату f. Функция возвращает значение
+// begin_destination по окончанию работы функции.
+char* copy_if_reverse(char *r_begin_source, const char *r_end_source, char *begin_destination, int (*f)(int));
+
 #endif //UNTITLED1_STRING__H

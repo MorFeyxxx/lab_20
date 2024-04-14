@@ -57,13 +57,13 @@ char* copy(const char *begin_source, const char *end_source, char *begin_destina
     return begin_destination + (end_source - begin_source);
 }
 
-char* copy_if(char *beginSource, const char *endSource, char *beginDestination, int (*f)(int)){
-    unsigned int range = endSource - beginSource;
+char* copy_if(char *begin_source, const char *end_source, char *begin_destination, int (*f)(int)){
+    unsigned int range = end_source - begin_source;
 
     for (unsigned int i = 0; i < range; i++){
-        if (f(beginSource[i]))
-            beginDestination = copy(&beginSource[i], &beginSource[i+1], beginDestination);
+        if (f(begin_source[i]))
+            begin_destination = copy(&begin_source[i], &begin_source[i+1], begin_destination);
     }
 
-    return beginDestination;
+    return begin_destination;
 }
