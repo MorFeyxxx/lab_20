@@ -76,4 +76,7 @@ bool get_word(char* begin_search, word_descriptor* word);
 // считывает слова с конца строки
 bool get_word_reverse(char* r_begin, char* r_end, word_descriptor* word);
 
+// освобождение строки
+void free_string(char* string);
+
 #endif //UNTITLED1_STRING__H

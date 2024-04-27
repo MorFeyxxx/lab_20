@@ -120,3 +120,11 @@ bool get_word_reverse(char* r_begin, char* r_end, word_descriptor* word){
 
     return true;
 }
+
+void free_string(char* string){
+    char* ptr = string;
+    while (*ptr) {
+        *ptr = '\0';
+        ptr++;
+    }
+}
