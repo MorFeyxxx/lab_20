@@ -6,6 +6,7 @@
 #include "string/tasks/lexicographical_str.h"
 #include "string/tasks/print_reverse_str.h"
 #include "string/tasks/counter_palindrome_words.h"
+#include "string/tasks/alternation_words_from_strs.h"
 
 int main() {
     test_remove_non_letters();
@@ -16,6 +17,7 @@ int main() {
     test_6_lexicographical_str();
     test_7_print_reverse_ordered();
     test_8_counter_palindrome_word();
+    test_9_alternation_words();
     return 0;
 }
 
