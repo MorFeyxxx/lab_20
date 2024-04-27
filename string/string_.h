@@ -5,8 +5,20 @@
 #include <ctype.h>
 #include <assert.h>
 #include <memory.h>
+#include <stdbool.h>
 
 #define ASSERT_STRING(expected, got) assert_string(expected, got, __FILE__, __FUNCTION__, __LINE__)
+
+typedef struct word_descriptor {
+    char* begin;
+    char* end;
+} word_descriptor;
+
+#define MAX_WORD_SIZE 20
+#define MAX_N_WORDS_IN_STRING 100
+#define MAX_STRING_SIZE 100
+
+extern char _string_buffer[MAX_STRING_SIZE + 1];
 
 // возвращает количество символов в строке
 size_t strlen_(const char* begin);
@@ -56,5 +68,12 @@ char* get_end_of_string(char* s);
 
 // Функция тестирования строк
 void assert_string(const char* expected, char* got, char const* file_name, char const* func_name, int line);
+
+// возвращает значение 0, если слово не было считано, иначе возвращено значение 1 и в переменную word типа WordDescriptor
+// будут записаны позиции начала слова, и первого символа после конца слова.
+bool get_word(char* begin_search, word_descriptor* word);
+
+// считывает слова с конца строки
+bool get_word_reverse(char* r_begin, char* r_end, word_descriptor* word);
 
 #endif //UNTITLED1_STRING__H

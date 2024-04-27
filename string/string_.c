@@ -1,5 +1,7 @@
 #include "string_.h"
 
+char _string_buffer[MAX_STRING_SIZE + 1];
+
 size_t strlen_(const char* begin){
     char *end = begin;
     while (*end != '\0')
@@ -95,4 +97,26 @@ void assert_string(const char* expected, char* got, char const* file_name, char 
         fprintf(stderr, "Got: \"%s\"\n\n", got);
     } else
         fprintf(stderr, "%s - OK\n", func_name);
+}
+
+bool get_word(char* begin_search, word_descriptor* word){
+    word->begin = find_non_space(begin_search);
+    if (*word->begin == '\0')
+        return false;
+
+    word->end = find_space(word->begin);
+
+    return true;
+}
+
+bool get_word_reverse(char* r_begin, char* r_end, word_descriptor* word){
+    if (word->begin == r_end)
+        return false;
+
+    word->end = find_non_space_reverse(r_begin, r_end);
+
+    word->begin = find_space_reverse(r_begin, r_end);
+    word->begin = word->begin == r_end ? word->begin : word->begin + 1;
+
+    return true;
 }
