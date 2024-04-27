@@ -20,6 +20,14 @@ typedef struct word_descriptor {
 
 extern char _string_buffer[MAX_STRING_SIZE + 1];
 
+typedef struct bag_of_words {
+    word_descriptor words[MAX_N_WORDS_IN_STRING];
+    size_t size;
+} bag_of_words;
+
+extern bag_of_words _bag;
+extern bag_of_words _bag2;
+
 // возвращает количество символов в строке
 size_t strlen_(const char* begin);
 
@@ -78,5 +86,8 @@ bool get_word_reverse(char* r_begin, char* r_end, word_descriptor* word);
 
 // освобождение строки
 void free_string(char* string);
+
+// освобождение сумки слов
+void free_bag(bag_of_words* bag);
 
 #endif //UNTITLED1_STRING__H
