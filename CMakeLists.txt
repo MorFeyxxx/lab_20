@@ -16,3 +16,4 @@ add_library(oas libs/data_structures/ordered_array_set/ordered_array_set.h
         libs/data_structures/ordered_array_set/ordered_array_set.c)
 
 target_link_libraries(untitled1 str)
+target_link_libraries(untitled1 oas)

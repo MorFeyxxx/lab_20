@@ -6,6 +6,8 @@
 #include <assert.h>
 #include <memory.h>
 
+#define ASSERT_STRING(expected, got) assert_string(expected, got, __FILE__, __FUNCTION__, __LINE__)
+
 // возвращает количество символов в строке
 size_t strlen_(const char* begin);
 
@@ -48,5 +50,11 @@ char* copy_if(char *begin_source, const char *end_source, char *begin_destinatio
 // заканчивая r_end_source, удовлетворяющие функции-предикату f. Функция возвращает значение
 // begin_destination по окончанию работы функции.
 char* copy_if_reverse(char *r_begin_source, const char *r_end_source, char *begin_destination, int (*f)(int));
+
+// Возвращает конец строки
+char* get_end_of_string(char* s);
+
+// Функция тестирования строк
+void assert_string(const char* expected, char* got, char const* file_name, char const* func_name, int line);
 
 #endif //UNTITLED1_STRING__H

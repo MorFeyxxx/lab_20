@@ -78,3 +78,21 @@ char* copy_if_reverse(char *r_begin_source, const char *r_end_source, char *begi
 
     return begin_destination;
 }
+
+char* get_end_of_string(char* s){
+    char* start = s;
+    while (*start != '\0')
+        start++;
+
+    return start;
+}
+
+void assert_string(const char* expected, char* got, char const* file_name, char const* func_name, int line) {
+    if (strcmp_(expected, got)) {
+        fprintf(stderr, "File %s\n", file_name);
+        fprintf(stderr, "%s - failed on line %d\n", func_name, line);
+        fprintf(stderr, "Expected: \"%s\"\n", expected);
+        fprintf(stderr, "Got: \"%s\"\n\n", got);
+    } else
+        fprintf(stderr, "%s - OK\n", func_name);
+}

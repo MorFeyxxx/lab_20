@@ -47,7 +47,7 @@ cmake_ninja_workdir = C$:/Users/Александр/CLionProjects/untitled1/cmake-build-de
 #############################################
 # Order-only phony target for untitled1
 
-build cmake_object_order_depends_target_untitled1: phony || cmake_object_order_depends_target_algorithms cmake_object_order_depends_target_data_structures cmake_object_order_depends_target_str
+build cmake_object_order_depends_target_untitled1: phony || cmake_object_order_depends_target_algorithms cmake_object_order_depends_target_data_structures cmake_object_order_depends_target_oas cmake_object_order_depends_target_str
 
 build CMakeFiles/untitled1.dir/main.c.obj: C_COMPILER__untitled1_unscanned_Debug C$:/Users/Александр/CLionProjects/untitled1/main.c || cmake_object_order_depends_target_untitled1
   DEP_FILE = CMakeFiles\untitled1.dir\main.c.obj.d
@@ -63,9 +63,9 @@ build CMakeFiles/untitled1.dir/main.c.obj: C_COMPILER__untitled1_unscanned_Debug
 #############################################
 # Link the executable untitled1.exe
 
-build untitled1.exe: C_EXECUTABLE_LINKER__untitled1_Debug CMakeFiles/untitled1.dir/main.c.obj | libs/data_structures/libdata_structures.a libs/algorithms/libalgorithms.a libstr.a || libs/algorithms/libalgorithms.a libs/data_structures/libdata_structures.a libstr.a
+build untitled1.exe: C_EXECUTABLE_LINKER__untitled1_Debug CMakeFiles/untitled1.dir/main.c.obj | libs/data_structures/libdata_structures.a libs/algorithms/libalgorithms.a libstr.a liboas.a || liboas.a libs/algorithms/libalgorithms.a libs/data_structures/libdata_structures.a libstr.a
   FLAGS = -g
-  LINK_LIBRARIES = libs/data_structures/libdata_structures.a  libs/algorithms/libalgorithms.a  libstr.a  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  LINK_LIBRARIES = libs/data_structures/libdata_structures.a  libs/algorithms/libalgorithms.a  libstr.a  liboas.a  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\untitled1.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
