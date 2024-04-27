@@ -12,4 +12,7 @@ target_link_libraries(untitled1 algorithms)
 add_library(str string/string_.h
         string/string_.c)
 
+add_library(oas libs/data_structures/ordered_array_set/ordered_array_set.h
+        libs/data_structures/ordered_array_set/ordered_array_set.c)
+
 target_link_libraries(untitled1 str)

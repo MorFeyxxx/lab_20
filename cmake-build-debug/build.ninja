@@ -104,6 +104,37 @@ build libstr.a: C_STATIC_LIBRARY_LINKER__str_Debug CMakeFiles/str.dir/string/str
   TARGET_FILE = libstr.a
   TARGET_PDB = str.a.dbg
 
+# =============================================================================
+# Object build statements for STATIC_LIBRARY target oas
+
+
+#############################################
+# Order-only phony target for oas
+
+build cmake_object_order_depends_target_oas: phony || CMakeFiles/oas.dir
+
+build CMakeFiles/oas.dir/libs/data_structures/ordered_array_set/ordered_array_set.c.obj: C_COMPILER__oas_unscanned_Debug C$:/Users/Александр/CLionProjects/untitled1/libs/data_structures/ordered_array_set/ordered_array_set.c || cmake_object_order_depends_target_oas
+  DEP_FILE = CMakeFiles\oas.dir\libs\data_structures\ordered_array_set\ordered_array_set.c.obj.d
+  FLAGS = -g -std=gnu11 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\oas.dir
+  OBJECT_FILE_DIR = CMakeFiles\oas.dir\libs\data_structures\ordered_array_set
+
+
+# =============================================================================
+# Link build statements for STATIC_LIBRARY target oas
+
+
+#############################################
+# Link the static library liboas.a
+
+build liboas.a: C_STATIC_LIBRARY_LINKER__oas_Debug CMakeFiles/oas.dir/libs/data_structures/ordered_array_set/ordered_array_set.c.obj
+  LANGUAGE_COMPILE_FLAGS = -g
+  OBJECT_DIR = CMakeFiles\oas.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = liboas.a
+  TARGET_PDB = oas.a.dbg
+
 
 #############################################
 # Utility command for edit_cache
@@ -320,6 +351,8 @@ build libalgorithms.a: phony libs/algorithms/libalgorithms.a
 
 build libdata_structures.a: phony libs/data_structures/libdata_structures.a
 
+build oas: phony liboas.a
+
 build str: phony libstr.a
 
 build untitled1: phony untitled1.exe
@@ -332,7 +365,7 @@ build untitled1: phony untitled1.exe
 #############################################
 # Folder: C:/Users/Александр/CLionProjects/untitled1/cmake-build-debug
 
-build all: phony untitled1.exe libstr.a libs/all
+build all: phony untitled1.exe libstr.a liboas.a libs/all
 
 # =============================================================================
 
