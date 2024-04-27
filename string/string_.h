@@ -90,4 +90,7 @@ void free_string(char* string);
 // освобождение сумки слов
 void free_bag(bag_of_words* bag);
 
+// возвращает значение 1, если слово является полиндромом, иначе 0
+bool is_palindrome_word(word_descriptor* word);
+
 #endif //UNTITLED1_STRING__H
