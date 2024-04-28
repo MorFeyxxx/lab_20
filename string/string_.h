@@ -6,6 +6,7 @@
 #include <assert.h>
 #include <memory.h>
 #include <stdbool.h>
+#include <stdlib.h>
 
 #define ASSERT_STRING(expected, got) assert_string(expected, got, __FILE__, __FUNCTION__, __LINE__)
 
