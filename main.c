@@ -10,6 +10,7 @@
 #include "string/tasks/change_word_order.h"
 #include "string/tasks/get_word_before_first_word_with_a.h"
 #include "string/tasks/find_last_common_word.h"
+#include "string/tasks/are_there_any_identical_words.h"
 
 int main() {
     test_remove_non_letters();
@@ -24,6 +25,7 @@ int main() {
     test_10_change_word_order();
     test_11_get_word_before_first_word_with_a();
     test_12_find_last_common_word();
+    test_13_are_there_any_identical_words();
     return 0;
 }
 
