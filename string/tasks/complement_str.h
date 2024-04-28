@@ -57,15 +57,15 @@ void test_18_fir_empty() {
 }
 
 void test_18_sec_empty() {
-    char s1[40] = "test test";
+    char s1[40] = "bim bam";
     size_t n1 = 2;
 
     char s2[40] = "";
     size_t n2 = 0;
 
     balance_string(s1, n1, s2, n2);
-    ASSERT_STRING("test test", s1);
-    ASSERT_STRING(" test test", s2);
+    ASSERT_STRING("bim bam", s1);
+    ASSERT_STRING(" bim bam", s2);
 }
 
 void test_18_equal_length() {

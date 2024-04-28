@@ -16,6 +16,7 @@ int compare(char* lhs, char* rhs, size_t size) {
 
     return 0;
 }
+
 void replace(char* source, char* w1, char* w2) {
     size_t w1_size = strlen_(w1);
     size_t w2_size = strlen_(w2);
@@ -55,6 +56,7 @@ void test_5_empty() {
     char source[] = "";
     char w1[] = "hello";
     char w2[] = "world";
+
     replace(source, w1, w2);
     ASSERT_STRING("", source);
 }
@@ -63,6 +65,7 @@ void test_5_word_not_in_string() {
     char source[] = "hello world";
     char w1[] = "Go";
     char w2[] = "dota";
+
     replace(source, w1, w2);
     ASSERT_STRING("hello world", source);
 }
@@ -71,6 +74,7 @@ void test_5_word_equal_length() {
     char source[] = "hello world";
     char w1[] = "world";
     char w2[] = "tasks";
+
     replace(source, w1, w2);
     ASSERT_STRING("hello tasks", source);
 }
@@ -79,6 +83,7 @@ void test_5_word_different_length() {
     char source[] = "hello world";
     char w1[] = "world";
     char w2[] = "Bim";
+
     replace(source, w1, w2);
     ASSERT_STRING("hello Bim", source);
 }
@@ -87,6 +92,7 @@ void test_5_word_different_length_two() {
     char source[] = "hello world";
     char w1[] = "world";
     char w2[] = "hunters";
+
     replace(source, w1, w2);
     ASSERT_STRING("hello hunters", source);
 }

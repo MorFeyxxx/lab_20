@@ -19,7 +19,7 @@
 #include "string/tasks/letters_belong_str.h"
 
 int main() {
-    test_remove_non_letters();
+    test_1_remove_non_letters();
     test_2_remove_adjacent_equal_letters();
     test_3_reverse_str();
     test_4_replace_digit_to_space();

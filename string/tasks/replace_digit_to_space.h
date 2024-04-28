@@ -62,5 +62,4 @@ void test_4_replace_digit_to_space() {
     test_4_letters_and_digit();
 }
 
-
 #endif //UNTITLED1_REPLACE_DIGIT_TO_SPACE_H

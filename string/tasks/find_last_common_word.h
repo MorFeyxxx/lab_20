@@ -44,7 +44,6 @@ void test_12_word_at_end() {
     ASSERT_STRING("play", dest);
 }
 
-
 void test_12_no_common_word() {
     char s1[] = "I like to play dota";
     char s2[] = "He does not drink tea";
@@ -56,7 +55,6 @@ void test_12_no_common_word() {
 
     ASSERT_STRING("", dest);
 }
-
 
 void test_12_word_at_start() {
     char s1[] = "drink tea";
@@ -70,7 +68,6 @@ void test_12_word_at_start() {
     ASSERT_STRING("drink", dest);
 }
 
-
 void test_12_single_word_strings() {
     char s1[] = "drink";
     char s2[] = "drink";
@@ -83,13 +80,11 @@ void test_12_single_word_strings() {
     ASSERT_STRING("drink", dest);
 }
 
-
 void test_12_find_last_common_word() {
     test_12_word_at_end();
     test_12_word_at_start();
     test_12_no_common_word();
     test_12_single_word_strings();
 }
-
 
 #endif //UNTITLED1_FIND_LAST_COMMON_WORD_H
