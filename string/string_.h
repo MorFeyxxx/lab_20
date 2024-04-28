@@ -93,4 +93,14 @@ void free_bag(bag_of_words* bag);
 // возвращает значение 1, если слово является полиндромом, иначе 0
 bool is_palindrome_word(word_descriptor* word);
 
+// возвращает значение 0, если слово не было считано, иначе возвращено значение 1 и в переменную word типа WordDescriptor
+// будут записаны позиции начала и конец слова.
+bool get_word_without_space(char* begin_search, word_descriptor* word);
+
+// возвращает значение 1, если слова одинаковы, иначе 0
+bool is_word_equal(const word_descriptor word1, const word_descriptor word2);
+
+// преобразует word_descriptor в char*
+void word_descriptor_to_string(word_descriptor word, char* dest);
+
 #endif //UNTITLED1_STRING__H
