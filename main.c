@@ -12,6 +12,7 @@
 #include "string/tasks/find_last_common_word.h"
 #include "string/tasks/are_there_any_identical_words.h"
 #include "string/tasks/search_by_first_letters.h"
+#include "string/tasks/get_words_other_than_last_word.h"
 
 int main() {
     test_remove_non_letters();
@@ -28,6 +29,7 @@ int main() {
     test_12_find_last_common_word();
     test_13_are_there_any_identical_words();
     test_14_search_by_first_letters();
+    test_15_get_words_other_then_last_word();
     return 0;
 }
 
