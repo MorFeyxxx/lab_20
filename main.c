@@ -14,6 +14,7 @@
 #include "string/tasks/search_by_first_letters.h"
 #include "string/tasks/get_words_other_than_last_word.h"
 #include "string/tasks/find_preceding_word.h"
+#include "string/tasks/remove_polindrome_words.h"
 
 int main() {
     test_remove_non_letters();
@@ -32,6 +33,7 @@ int main() {
     test_14_search_by_first_letters();
     test_15_get_words_other_then_last_word();
     test_16_find_preceding_word();
+    test_17_remove_palindrome_words();
     return 0;
 }
 
