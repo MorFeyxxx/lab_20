@@ -3,6 +3,7 @@
 #include "libs/algorithms/evaluate_expression.h"
 #include "libs/algorithms/filter_word.h"
 #include "libs/algorithms/leave_longest_word.h"
+#include "libs/algorithms/remove_true_polynomial.h"
 
 int main(){
     test_matrix_transpose();
@@ -10,4 +11,5 @@ int main(){
     test_evaluate();
     test_filter_word();
     test_leave_longest();
+    test_remove_true_polynomial();
 }
