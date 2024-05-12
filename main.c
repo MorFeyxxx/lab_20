@@ -5,6 +5,7 @@
 #include "libs/algorithms/leave_longest_word.h"
 #include "libs/algorithms/remove_true_polynomial.h"
 #include "libs/algorithms/rearrange_numbers.h"
+#include "libs/algorithms/transpose_non_symmetric_matrix.h"
 
 int main(){
     test_matrix_transpose();
@@ -14,4 +15,5 @@ int main(){
     test_leave_longest();
     test_remove_true_polynomial();
     test_rearrange_numbers();
+    test_transpose_non_symmetric_matrix();
 }
