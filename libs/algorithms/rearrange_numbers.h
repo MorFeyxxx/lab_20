@@ -3,9 +3,30 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 
 #include "../../string/string_.h"
 #include "../data_structures/vector/vector.h"
+
+
+void generate_numbers_array(const char* filename) {
+    srand(time(NULL));
+
+    FILE* file = fopen(filename, "wb");
+    if (file == NULL) {
+        printf("reading error\n");
+        exit(1);
+    }
+
+    int amount_numbers = (int) rand() % 10 + 1;
+
+    for (int i = 0; i < amount_numbers; i++) {
+        int x = rand() % 200 - 100;
+        fwrite(&x, sizeof(int), 1, file);
+    }
+
+    fclose(file);
+}
 
 
 void rearrange_numbers(const char* filename) {

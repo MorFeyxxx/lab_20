@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
+#include <time.h>
 
 #include "../../string/string_.h"
 
@@ -15,6 +16,18 @@ typedef struct sportsman {
     char name[MAX_LENGTH_STRING];
     int best_result;
 } sportsman;
+
+
+static void generate_name(char* s) {
+    int name_length = rand() % 30 + 5;
+
+    char* rec_ptr = s;
+    for (int i = 0; i < name_length; i++) {
+        *rec_ptr = rand() % 26 + 97;
+        rec_ptr++;
+    }
+    *rec_ptr = '\0';
+}
 
 
 void swap_sm(sportsman *a, sportsman *b){

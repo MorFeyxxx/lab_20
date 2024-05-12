@@ -4,8 +4,33 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <assert.h>
+#include <time.h>
 
 #include "../data_structures/matrix/matrix.h"
+
+
+void generate_random_matrix_file(const char* filename, size_t n) {
+    srand(time(NULL));
+
+    FILE* file = fopen(filename, "w");
+    if (file == NULL) {
+        printf("reading error\n");
+        exit(1);
+    }
+
+    fprintf(file, "%lld\n", n);
+
+    for (size_t i = 0; i < n; i++) {
+        for (size_t j = 0; j < n; j++) {
+            fprintf(file, "%d ", rand() % 10);
+        }
+
+        fprintf(file, "\n");
+    }
+
+    fclose(file);
+}
+
 
 void transpose_matrix_in_file(const char* filename) {
     FILE* file = fopen(filename, "r");

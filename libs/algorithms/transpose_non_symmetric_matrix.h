@@ -4,8 +4,37 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <assert.h>
+#include <time.h>
 
 #include "../data_structures/matrix/matrix.h"
+
+
+void generate_non_symmetric_matrix(const char* filename) {
+    srand(time(NULL));
+
+    FILE* file = fopen(filename, "wb");
+    if (file == NULL) {
+        printf("reading error\n");
+        exit(1);
+    }
+
+    int n = rand() % 2 + 2;
+    fwrite(&n, sizeof(int), 1, file);
+
+    int amount_matrix = rand() % 3 + 1;
+
+    for (int k = 0; k < amount_matrix; k++) {
+        int matrix[n][n];
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                matrix[i][j] = rand() % 100;
+            }
+        }
+        fwrite(matrix, sizeof(int), n * n, file);
+    }
+
+    fclose(file);
+}
 
 
 int is_symmetric(int n, int matrix[n][n]) {

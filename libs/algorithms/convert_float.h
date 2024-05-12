@@ -5,9 +5,27 @@
 #include <stdlib.h>
 #include <malloc.h>
 #include <assert.h>
+#include <time.h>
 
 #include "../../string/string_.h"
 #include "../data_structures/vectorVoid/vectorVoid.h"
+
+
+void generate_float(const char* filename, int n) {
+    srand(time(NULL));
+
+    FILE* file = fopen(filename, "w");
+    if (file == NULL) {
+        printf("reading error\n");
+        exit(1);
+    }
+
+    for (size_t i = 0; i < n; i++)
+        fprintf(file, "%f ", 10.0 * rand() / RAND_MAX);
+
+    fclose(file);
+}
+
 
 void convert_float(const char* filename) {
     FILE* file = fopen(filename, "r");

@@ -5,7 +5,38 @@
 #include <stdlib.h>
 #include <stdbool.h>
 #include <assert.h>
+#include <time.h>
+
 #include "../../string/string_.h"
+
+
+void generate_expression(const char *file_name) {
+    srand(time(NULL));
+
+    FILE *file = fopen(file_name, "w");
+    if (file == NULL) {
+        printf("reading error\n");
+        exit(1);
+    }
+
+    int x1 = rand() % 10;
+    int x2 = rand() % 10;
+    int x3 = rand() % 10;
+
+    char operators[] = "+-*/";
+    char op1 = operators[rand() % 4];
+    char op2 = operators[rand() % 4];
+
+    bool one_operation = rand() % 2;
+
+    if (one_operation)
+        fprintf(file, "(%d %c %d)", x1, op1, x2);
+    else
+        fprintf(file, "(%d %c %d) %c %d", x1, op1, x2, op2, x3);
+
+    fclose(file);
+}
+
 
 void evaluate_expression(const char* filename) {
     FILE* file = fopen(filename, "r+");

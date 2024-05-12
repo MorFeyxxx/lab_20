@@ -4,6 +4,23 @@
 #include "../../string/string_.h"
 #include "../../string/tasks/letters_belong_str.h"
 
+
+void generate_string(const char* filename, char* source_string) {
+    FILE* file = fopen(filename, "w");
+    if (file == NULL) {
+        printf("reading error\n");
+        exit(1);
+    }
+
+    size_t string_length = strlen_(source_string);
+
+    for (size_t i = 0; i <= string_length; i++)
+        fprintf(file, "%c", source_string[i]);
+
+    fclose(file);
+}
+
+
 int compare_letters(const void* s1, const void* s2) {
     return *(const unsigned char*) s1 - *(const unsigned char*) s2;
 }
@@ -34,23 +51,6 @@ bool letters_belong_word(word_descriptor sub_word, word_descriptor word) {
     }
 
     return true;
-}
-
-
-
-void generate_string(const char* filename, char* source_string) {
-    FILE* file = fopen(filename, "w");
-    if (file == NULL) {
-        printf("reading error\n");
-        exit(1);
-    }
-
-    size_t string_length = strlen_(source_string);
-
-    for (size_t i = 0; i <= string_length; i++)
-        fprintf(file, "%c", source_string[i]);
-
-    fclose(file);
 }
 
 

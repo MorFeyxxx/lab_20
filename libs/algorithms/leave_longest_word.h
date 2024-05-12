@@ -5,11 +5,35 @@
 #include <stdlib.h>
 #include <string.h>
 #include <assert.h>
+#include <time.h>
 
 #include "../../string/string_.h"
 
-
 #define MAX_LINE_SIZE 100
+
+
+void generate_text_file(const char* filename, int lines, int word, int max_word_size) {
+    srand(time(NULL));
+
+    FILE* file = fopen(filename, "w");
+    if (file == NULL) {
+        printf("reading error\n");
+        exit(1);
+    }
+
+    for (int i = 0; i < lines; i++) {
+        for (int j = 0; j < word; j++) {
+            for (int k = 0; k < rand() % max_word_size + 1; k++) {
+                fprintf(file, "%c", 'a' + rand() % 26);
+            }
+            fprintf(file, " ");
+        }
+        fprintf(file, "\n");
+    }
+
+    fclose(file);
+}
+
 
 void leave_longest_word(const char* filename) {
     FILE* file = fopen(filename, "r");

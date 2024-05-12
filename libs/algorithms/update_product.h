@@ -3,6 +3,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 
 #include "../../string/string_.h"
 #include "../data_structures/vectorVoid/vectorVoid.h"
@@ -22,6 +23,66 @@ typedef struct order {
     char order_name[MAX_LENGTH_STRING];
     int quantity;
 } order;
+
+
+void generate_product_and_order(const char* filename1, const char* filename2) {
+    srand(time(NULL));
+
+    FILE* file1 = fopen(filename1, "wb");
+    if (file1 == NULL) {
+        printf("reading error\n");
+        exit(1);
+    }
+
+    FILE* file2 = fopen(filename2, "wb");
+    if (file2 == NULL) {
+        printf("reading error\n");
+        exit(1);
+    }
+
+    int amount_product = rand() % 15 + 1;
+    int amount_order = amount_product % 2 + 1;
+
+    for (int i = 0; i < amount_product; i++) {
+        product pr;
+        order od;
+
+        pr.unit_price = rand() % 100 + 1;
+        pr.quantity = rand() % 20 + 1;
+        pr.total_cost = pr.unit_price * pr.quantity;
+
+        int name_length = rand() % 10 + 1;
+        char* product_rec_ptr = pr.product_name;
+        char* order_rec_ptr = od.order_name;
+
+        for (int j = 0; j < name_length; j++) {
+            char ch = rand() % 26 + 97;
+
+            *product_rec_ptr = ch;
+            product_rec_ptr++;
+
+            if (amount_order > 0) {
+                *order_rec_ptr = ch;
+                order_rec_ptr++;
+            }
+        }
+
+        *product_rec_ptr = '\0';
+        if (amount_order > 0) {
+            *order_rec_ptr = '\0';
+            od.quantity = rand() % 25 + 1;
+        }
+
+        fwrite(&pr, sizeof(product), 1, file1);
+        if (amount_order > 0)
+            fwrite(&od, sizeof(order), 1, file2);
+
+        amount_order--;
+    }
+
+    fclose(file1);
+    fclose(file2);
+}
 
 
 void update_product(const char* filename1, const char* filename2) {

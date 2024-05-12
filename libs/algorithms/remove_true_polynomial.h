@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
+#include <time.h>
 
 #include "../../string/string_.h"
 #include "../data_structures/vectorVoid/vectorVoid.h"
@@ -12,6 +13,33 @@ typedef struct monomial {
     size_t degree;
     double coefficient;
 } monomial;
+
+
+void generate_polynomial(const char* filename) {
+    srand(time(NULL));
+
+    FILE* file = fopen(filename, "wb");
+    if (file == NULL) {
+        printf("reading error\n");
+        exit(1);
+    }
+
+    int amount_polynomial = rand() % 5 + 2;
+
+    for (int k = 0; k < amount_polynomial; k++) {
+        int amount_monomial = rand() % 5 + 1;
+
+        monomial mono;
+        for (int i = 0; i <= amount_monomial; i++) {
+            mono.degree = amount_monomial - i;
+            mono.coefficient = 2.0 * rand() / RAND_MAX - 1.0;
+
+            fwrite(&mono, sizeof(monomial), 1, file);
+        }
+    }
+
+    fclose(file);
+}
 
 
 double get_monomial_value(monomial mono, double x) {
