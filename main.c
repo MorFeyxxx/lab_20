@@ -7,6 +7,7 @@
 #include "libs/algorithms/rearrange_numbers.h"
 #include "libs/algorithms/transpose_non_symmetric_matrix.h"
 #include "libs/algorithms/get_best_team.h"
+#include "libs/algorithms/update_product.h"
 
 int main(){
     test_matrix_transpose();
@@ -18,4 +19,5 @@ int main(){
     test_rearrange_numbers();
     test_transpose_non_symmetric_matrix();
     test_get_best_team();
+    test_update_product();
 }
