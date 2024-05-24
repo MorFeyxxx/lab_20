@@ -158,8 +158,8 @@ void test_filter_word_3_sequence_in_line() {
 
 
 void test_filter_word() {
-    //test_filter_word_1_empty_file();
-    //test_filter_word_2_sequence_not_in_line();
+    test_filter_word_1_empty_file();
+    test_filter_word_2_sequence_not_in_line();
     test_filter_word_3_sequence_in_line();
 }
 

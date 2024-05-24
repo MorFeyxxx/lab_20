@@ -48,4 +48,7 @@ int* back(vector *v);
 
 //Возвращает указатель на нулевой элемент вектора
 int* front(vector *v);
+
+// Удаляет элемент под индексом index с сохранением порядка, и без изменения размера
+void popBackIndex(vector *v, int index);
 #endif //UNTITLED1_VECTOR_H

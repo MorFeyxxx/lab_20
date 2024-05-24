@@ -114,3 +114,13 @@ int* front(vector *v){
 
     return &v->data[0];
 }
+
+void popBackIndex(vector *v, int index){
+    if (isEmpty(v)){
+        printf(stderr, "Zero length");
+        exit(1);
+    }
+
+    for(int i = index; i < v->size - 1; i++)
+        v->data[i] = v->data[i + 1];
+}
