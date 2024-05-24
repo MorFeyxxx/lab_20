@@ -138,7 +138,7 @@ void test_fill_matrix_3_more_matrix_element() {
 }
 
 
-void test_fill_matrix() {
+void test_1_fill_matrix() {
     test_fill_matrix_1_empty_file();
     test_fill_matrix_2_unit_matrix();
     test_fill_matrix_3_more_matrix_element();
