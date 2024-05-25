@@ -2,7 +2,7 @@
 #define UNTITLED1_2_GAME_OF_LIFE_H
 
 #include "../../data_structures/matrix/matrix.h"
-#include "assert.h"
+#include <assert.h>
 #include <stdbool.h>
 
 

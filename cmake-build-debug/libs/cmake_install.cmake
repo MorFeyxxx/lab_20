@@ -34,16 +34,16 @@ endif()
 
 # Set default install directory permissions.
 if(NOT DEFINED CMAKE_OBJDUMP)
-  set(CMAKE_OBJDUMP "D:/Project on C/CLion 2023.2.1/bin/mingw/bin/objdump.exe")
-endif()
-
-if(NOT CMAKE_INSTALL_LOCAL_ONLY)
-  # Include the install script for the subdirectory.
-  include("C:/Users/Александр/CLionProjects/untitled1/cmake-build-debug/libs/data_structures/cmake_install.cmake")
+  set(CMAKE_OBJDUMP "D:/Projects on C_24/CLion 2024.1.1/bin/mingw/bin/objdump.exe")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
   include("C:/Users/Александр/CLionProjects/untitled1/cmake-build-debug/libs/algorithms/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("C:/Users/Александр/CLionProjects/untitled1/cmake-build-debug/libs/data_structures/cmake_install.cmake")
 endif()
 
