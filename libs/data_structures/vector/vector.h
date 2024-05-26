@@ -32,7 +32,7 @@ bool isEmpty(vector *v);
 bool isFull(vector *v);
 
 //Возвращает i-ый элемент вектора v
-int getVectorValue(vector *v, size_t i);
+int getVectorValue(vector v, size_t i);
 
 //Добавляет элемент x в конец вектора v
 void pushBack(vector *v, int x);

@@ -31,3 +31,15 @@
 578	866	7384247791325709	libs/algorithms/libalgorithms.a	9c8a896b733adb84
 866	1061	7384247793294526	libs/data_structures/libdata_structures.a	1a3c4dcb71ee13f4
 1062	1456	7384247797167296	untitled1.exe	e9f74126abf29744
+167	449	7384311099462124	libs/data_structures/CMakeFiles/data_structures.dir/vector/vector.c.obj	a4f610f38de4ddb7
+143	594	7384311099652182	CMakeFiles/untitled1.dir/main.c.obj	6fad0ad2d9a56c68
+452	829	7384311103273043	libs/data_structures/libdata_structures.a	1a3c4dcb71ee13f4
+829	1338	7384311108293655	untitled1.exe	e9f74126abf29744
+7	362	7384312583947477	CMakeFiles/untitled1.dir/main.c.obj	6fad0ad2d9a56c68
+363	559	7384312585867907	untitled1.exe	e9f74126abf29744
+7	333	7384314730497731	CMakeFiles/untitled1.dir/main.c.obj	6fad0ad2d9a56c68
+334	530	7384314732408167	untitled1.exe	e9f74126abf29744
+7	341	7384315366254276	CMakeFiles/untitled1.dir/main.c.obj	6fad0ad2d9a56c68
+342	543	7384315368184776	untitled1.exe	e9f74126abf29744
+8	362	7384341553427211	CMakeFiles/untitled1.dir/main.c.obj	6fad0ad2d9a56c68
+363	608	7384341555837759	untitled1.exe	e9f74126abf29744

@@ -58,8 +58,8 @@ bool isFull(vector *v){
     return v->size == v->capacity;
 }
 
-int getVectorValue(vector *v, size_t i){
-    return v->data[i];
+int getVectorValue(vector v, size_t i){
+    return v.data[i];
 }
 
 void pushBack(vector *v, int x){
