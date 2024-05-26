@@ -104,4 +104,8 @@ bool is_word_equal(const word_descriptor word1, const word_descriptor word2);
 // преобразует word_descriptor в char*
 void word_descriptor_to_string(word_descriptor word, char* dest);
 
+void print_word(word_descriptor word);
+
+bool is_sub_word(const word_descriptor word1, const word_descriptor word2);
+
 #endif //UNTITLED1_STRING__H

@@ -197,3 +197,29 @@ void word_descriptor_to_string(word_descriptor word, char* dest){
 
     *dest = '\0';
 }
+
+void print_word(word_descriptor word) {
+    while (word.begin <= word.end) {
+        printf("%c", *word.begin);
+        word.begin++;
+    }
+    printf("\n");
+}
+
+bool is_sub_word(const word_descriptor word1, const word_descriptor word2){
+    char* begin1 = word1.begin;
+    char* begin2 = word2.begin;
+
+    while (begin1 <= word1.end) {
+        if (*begin1 != *begin2)
+            return false;
+
+        begin1++;
+        begin2++;
+    }
+
+    if (word1.end - begin1 > 0)
+        return false;
+
+    return true;
+}

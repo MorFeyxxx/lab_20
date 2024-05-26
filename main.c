@@ -6,6 +6,7 @@
 #include "libs/algorithms/task_laba_20/6_generate_sequence_by_pattern.h"
 #include "libs/algorithms/task_laba_20/7_binary_tree.h"
 #include "libs/algorithms/task_laba_20/8_rearrange_string.h"
+#include "libs/algorithms/task_laba_20/11_auto_completion.h"
 
 int main(){
     test_1_fill_matrix();
@@ -16,4 +17,5 @@ int main(){
     test_6_generate_sequence();
     test_7_generate_tree();
     test_8_rearrange_string();
+    test_11_auto_completion();
 }
