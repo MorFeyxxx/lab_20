@@ -5,6 +5,7 @@
 #include "libs/algorithms/task_laba_20/5_get_submatrix.h"
 #include "libs/algorithms/task_laba_20/6_generate_sequence_by_pattern.h"
 #include "libs/algorithms/task_laba_20/7_binary_tree.h"
+#include "libs/algorithms/task_laba_20/8_rearrange_string.h"
 
 int main(){
     test_1_fill_matrix();
@@ -14,4 +15,5 @@ int main(){
     test_5_get_submatrix();
     test_6_generate_sequence();
     test_7_generate_tree();
+    test_8_rearrange_string();
 }
