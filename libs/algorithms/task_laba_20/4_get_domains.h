@@ -123,7 +123,7 @@ void get_domains(const char* filename) {
 
 
 void test_get_domains_1_empty_file() {
-    const char filename[] = "F:\\laba_op_19\\task_4\\test_1.txt";
+    const char filename[] = "F:\\laba_op_20\\task_4\\test_1.txt";
 
     FILE* file = fopen(filename, "w");
     fclose(file);
@@ -143,7 +143,7 @@ void test_get_domains_1_empty_file() {
 
 
 void test_get_domains_2_one_domain() {
-    const char filename[] = "F:\\laba_op_19\\task_4\\test_2.txt";
+    const char filename[] = "F:\\laba_op_20\\task_4\\test_2.txt";
 
     FILE* file = fopen(filename, "w");
 
@@ -174,7 +174,7 @@ void test_get_domains_2_one_domain() {
 
 
 void test_get_domains_3_more_domain() {
-    const char filename[] = "F:\\laba_op_19\\task_4\\test_3.txt";
+    const char filename[] = "F:\\laba_op_20\\task_4\\test_3.txt";
 
     FILE* file = fopen(filename, "w");
 

@@ -3,6 +3,7 @@
 #include "libs/algorithms/task_laba_20/3_median_filter.h"
 #include "libs/algorithms/task_laba_20/4_get_domains.h"
 #include "libs/algorithms/task_laba_20/5_get_submatrix.h"
+#include "libs/algorithms/task_laba_20/6_generate_sequence_by_pattern.h"
 
 int main(){
     test_1_fill_matrix();
@@ -10,4 +11,5 @@ int main(){
     test_3_median_filter();
     test_4_get_domains();
     test_5_get_submatrix();
+    test_6_generate_sequence();
 }

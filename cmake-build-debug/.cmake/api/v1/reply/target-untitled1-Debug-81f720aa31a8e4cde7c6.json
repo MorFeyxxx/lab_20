@@ -79,12 +79,12 @@
 	"dependencies" : 
 	[
 		{
-			"backtrace" : 4,
-			"id" : "str::@6890427a1f51a3e7e1df"
-		},
-		{
 			"backtrace" : 2,
 			"id" : "algorithms::@4f84be16bc75261b2db5"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "str::@6890427a1f51a3e7e1df"
 		},
 		{
 			"backtrace" : 2,
